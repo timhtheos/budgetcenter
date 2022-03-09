@@ -1,0 +1,23 @@
+uuid: e430c622-1882-4615-81be-52713cbde920
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_amount
+    - node.type.expense
+id: node.expense.field_amount
+field_name: field_amount
+entity_type: node
+bundle: expense
+label: Amount
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: '₱ '
+  suffix: ''
+field_type: decimal

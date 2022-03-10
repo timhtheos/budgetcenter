@@ -1,0 +1,55 @@
+uuid: 3edadf89-35cd-49a7-93c4-d6bb335a4998
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.expense_item.field_categories
+    - field.field.paragraph.expense_item.field_merchant
+    - field.field.paragraph.expense_item.field_no_of_units
+    - field.field.paragraph.expense_item.field_particulars
+    - field.field.paragraph.expense_item.field_unit_cost
+    - paragraphs.paragraphs_type.expense_item
+  module:
+    - chosen_field
+id: paragraph.expense_item.default
+targetEntityType: paragraph
+bundle: expense_item
+mode: default
+content:
+  field_categories:
+    type: chosen_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_merchant:
+    type: chosen_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_no_of_units:
+    type: number
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_particulars:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_unit_cost:
+    type: number
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

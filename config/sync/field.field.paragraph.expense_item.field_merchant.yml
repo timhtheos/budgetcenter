@@ -1,16 +1,16 @@
-uuid: dde51019-257c-4177-953b-0e2c66e6bd04
+uuid: 80cadb1a-2226-404f-9e64-838feb69abfd
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_categories
-    - node.type.expense
-    - taxonomy.vocabulary.tags
-id: node.expense.field_categories
-field_name: field_categories
-entity_type: node
-bundle: expense
-label: Categories
+    - field.storage.paragraph.field_merchant
+    - paragraphs.paragraphs_type.expense_item
+    - taxonomy.vocabulary.merchants
+id: paragraph.expense_item.field_merchant
+field_name: field_merchant
+entity_type: paragraph
+bundle: expense_item
+label: Merchant
 description: ''
 required: true
 translatable: false
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      tags: tags
+      merchants: merchants
     sort:
       field: name
       direction: asc

@@ -4,13 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.expense.field_amount
     - field.field.node.expense.field_buyer
-    - field.field.node.expense.field_categories
     - field.field.node.expense.field_date
-    - field.field.node.expense.field_merchant
+    - field.field.node.expense.field_expense_item
     - field.field.node.expense.field_payment_method
-    - field.field.node.expense.field_receipts
     - node.type.expense
   module:
     - user
@@ -25,10 +22,7 @@ content:
     weight: 100
     region: content
 hidden:
-  field_amount: true
   field_buyer: true
-  field_categories: true
   field_date: true
-  field_merchant: true
+  field_expense_item: true
   field_payment_method: true
-  field_receipts: true

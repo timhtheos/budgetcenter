@@ -1,16 +1,16 @@
-uuid: 7c89e20b-03e8-488e-9978-beaedb33ce4a
+uuid: aef22980-300a-490f-b53c-a1839b85f7a5
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - taxonomy
+    - user
 id: node.field_buyer
 field_name: field_buyer
 entity_type: node
 type: entity_reference
 settings:
-  target_type: taxonomy_term
+  target_type: user
 module: core
 locked: false
 cardinality: -1

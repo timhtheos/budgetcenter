@@ -1,0 +1,9 @@
+status: 1
+pattern: '[node:field_date:date:custom:Y-m-d-D], [node:field_buyer], [node:field_payment_method:entity:name], [node:field_merchant:entity:name]'
+escape: false
+preserve_titles: false
+dependencies:
+  config:
+    - node.type.expense
+save: 0
+chunk: '50'

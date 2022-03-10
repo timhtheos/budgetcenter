@@ -1,0 +1,21 @@
+uuid: 7b662c68-1d5a-4fb7-ab97-71f6af5c4094
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_particulars
+    - paragraphs.paragraphs_type.expense_item
+id: paragraph.expense_item.field_particulars
+field_name: field_particulars
+entity_type: paragraph
+bundle: expense_item
+label: Particulars
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: Item
+default_value_callback: ''
+settings: {  }
+field_type: string

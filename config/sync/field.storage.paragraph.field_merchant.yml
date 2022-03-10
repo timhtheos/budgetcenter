@@ -1,19 +1,19 @@
-uuid: efd38299-6540-4bef-8725-bcec5e6b0ba8
+uuid: 65635e47-2dbb-4c2c-987e-dbd2aa26cf3c
 langcode: en
 status: true
 dependencies:
   module:
-    - node
+    - paragraphs
     - taxonomy
-id: node.field_categories
-field_name: field_categories
-entity_type: node
+id: paragraph.field_merchant
+field_name: field_merchant
+entity_type: paragraph
 type: entity_reference
 settings:
   target_type: taxonomy_term
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

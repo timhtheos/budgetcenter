@@ -1,12 +1,12 @@
-uuid: 0229b5eb-fbf7-4d62-b888-0aa7cd2cd86f
+uuid: b7e06d7f-df88-4e45-8d53-31f277281191
 langcode: en
 status: true
 dependencies:
   module:
-    - node
-id: node.field_amount
-field_name: field_amount
-entity_type: node
+    - paragraphs
+id: paragraph.field_no_of_units
+field_name: field_no_of_units
+entity_type: paragraph
 type: decimal
 settings:
   precision: 10

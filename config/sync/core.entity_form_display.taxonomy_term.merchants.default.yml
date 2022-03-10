@@ -1,0 +1,23 @@
+uuid: 406d3160-6a19-4651-8926-d688337956d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.merchants
+id: taxonomy_term.merchants.default
+targetEntityType: taxonomy_term
+bundle: merchants
+mode: default
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  path: true
+  status: true

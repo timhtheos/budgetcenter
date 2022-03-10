@@ -3,18 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.expense.field_amount
     - field.field.node.expense.field_buyer
-    - field.field.node.expense.field_categories
     - field.field.node.expense.field_date
-    - field.field.node.expense.field_merchant
+    - field.field.node.expense.field_expense_item
     - field.field.node.expense.field_payment_method
-    - field.field.node.expense.field_receipts
-    - image.style.thumbnail
     - node.type.expense
   module:
+    - chosen_field
     - datetime
-    - image
+    - paragraphs
     - path
 id: node.expense.default
 targetEntityType: node
@@ -27,20 +24,7 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_amount:
-    type: number
-    weight: 8
-    region: content
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
   field_buyer:
-    type: options_buttons
-    weight: 11
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_categories:
     type: options_buttons
     weight: 13
     region: content
@@ -52,25 +36,29 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_merchant:
-    type: options_select
-    weight: 12
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_payment_method:
-    type: options_select
-    weight: 9
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_receipts:
-    type: image_image
+  field_expense_item:
+    type: paragraphs
     weight: 10
     region: content
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_payment_method:
+    type: chosen_select
+    weight: 11
+    region: content
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path

@@ -26,8 +26,12 @@
         "drupal/core-composer-scaffold": "^9.3",
         "drupal/core-recommended": "^9.3",
         "drupal/paragraphs": "^1.13",
+        "drupal/select_or_other": "^4.0",
+        "drupal/smart_date": "^3.5",
         "drupal/token": "^1.10",
         "drupal/views_flipped_table": "^1.4",
+        "drupal/views_simple_math_field": "^3.0",
+        "drupal/views_summarize": "^1.1@beta",
         "drush/drush": "^10.6",
         "vlucas/phpdotenv": "^5.1",
         "webflo/drupal-finder": "^1.2"

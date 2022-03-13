@@ -1,0 +1,84 @@
+.page-view-expenses,
+.page-view-expenses-detailed {
+  .view-header {
+    margin-bottom: 20px;
+
+    a {
+      border-radius: 0;
+      border: 0 none;
+      background-color: #ccc;
+      background-image: none;
+      color: rgb(0, 116, 189);
+      font-weight: 400;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 5px 10px;
+
+      &:hover {
+        background-color: #0074bd;
+        color: #ccc;
+      }
+    }
+
+    hr {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .view-expenses {
+    table {
+      width: 100%;
+    }
+  }
+
+  #block-budget-center-content {
+    // margin-top: 20px;
+  }
+
+  td.views-field-field-expense-item .item-list {
+    display: none;
+  }
+
+  th.views-field-nothing-1,
+  td.views-field-nothing-1 {
+    width: 225px;
+  }
+
+  td.views-field-nothing-1 {
+    @include display-flex();
+    @include flex("justify-content", "center");
+    @include flex("align-items", "center");
+
+    a {
+      display: block;
+      background-color: #ccc;
+      text-transform: uppercase;
+      text-decoration: none;
+      margin: 0 5px;
+      padding: 5px 10px;
+    }
+
+    a:hover {
+      background-color: #0074bd;
+      color: #ccc;
+    }
+
+    a:last-child {
+      background-color: rgba(red, 0.75);
+      color: #ccc;
+    }
+
+    a:last-child:hover {
+      background-color: darken(red, 25%);
+      color: #FFF;
+    }
+
+  }
+
+}
+
+
+
+.path-frontpage {
+}

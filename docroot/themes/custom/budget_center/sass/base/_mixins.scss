@@ -1,0 +1,50 @@
+// Mixin to display flex.
+@mixin display-flex($suffix: "") {
+  display: -webkit-box #{$suffix};   /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box #{$suffix};      /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox #{$suffix};   /* TWEENER - IE 10 */
+  display: -webkit-flex #{$suffix};  /* NEW - Chrome */
+  display: flex #{$suffix};          /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+// Mixin to display inline-flex.
+@mixin display-inline-flex($suffix: "") {
+  display: -webkit-box #{$suffix};   /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box #{$suffix};      /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox #{$suffix};   /* TWEENER - IE 10 */
+  display: -webkit-flex #{$suffix};  /* NEW - Chrome */
+  display: inline-flex #{$suffix};          /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+// Mixin to flex order.
+@mixin flex-order($order, $suffix: "") {
+  -webkit-box-ordinal-group: #{$order} #{$suffix}; /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-ordinal-group: #{$order} #{$suffix};    /* OLD - Firefox 19- */
+  -ms-flex-order: #{$order} #{$suffix};            /* TWEENER - IE 10 */
+  -webkit-order: #{$order} #{$suffix};             /* NEW - Chrome */
+  order: #{$order} #{$suffix};                     /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+// Mixin for other flex properties.
+@mixin flex($prop, $val, $suffix: "") {
+  -webkit-#{$prop}: #{$val} #{$suffix};  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-#{$prop}: #{$val} #{$suffix};     /* OLD - Firefox 19- (buggy but mostly works) */
+  #{$prop}: #{$val} #{$suffix};          /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+// Rotate.
+@mixin rotate($deg) {
+  transform:rotate(#{$deg});
+  -ms-transform:rotate(#{$deg});     /* IE 9 */
+  -moz-transform:rotate(#{$deg});    /* Firefox */
+  -webkit-transform:rotate(#{$deg}); /* Safari and Chrome */
+  -o-transform:rotate(#{$deg});      /* Opera */
+}
+
+// Transition.
+@mixin transition($val) {
+  -webkit-transition: #{$val};
+  -moz-transition: #{$val};
+  -o-transition: #{$val};
+  transition: #{$val};
+}

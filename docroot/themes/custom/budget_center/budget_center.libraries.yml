@@ -1,0 +1,10 @@
+global-styling:
+  css:
+    theme:
+      css/styles.css: {}
+  js:
+    js/page--expenses.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - views/views.ajax

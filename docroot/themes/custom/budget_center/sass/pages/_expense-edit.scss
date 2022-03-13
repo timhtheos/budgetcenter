@@ -1,0 +1,155 @@
+#block-backtoexpenseexpenseaddedit {
+  margin-bottom: 25px;
+
+  a {
+    border-radius: 0;
+    border: 0 none;
+    background-color: #ccc;
+    background-image: none;
+    color: rgb(0, 116, 189);
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 5px 10px;
+
+    &:hover {
+      background-color: #0074bd;
+      color: #ccc;
+    }
+  }
+}
+
+// Needs to specify edit page.
+.path-node .node-expense-form,
+.path-node .node-expense-edit-form {
+  .layout-region-node-secondary {
+    display: none;
+  }
+
+  .field--name-field-date,
+  .field--name-field-payment-method > .form-item,
+  .field--name-field-buyer > .form-item {
+    @include display-flex();
+    @include flex("justify-content", "flex-start");
+    @include flex("align-items", "center");
+    margin: 0 0 12px;
+
+    > * {
+      width: 208px;
+    }
+
+    > *:first-child {
+      width: 166px;
+    }
+
+    h4.label,
+    > label {
+      text-align: right;
+      padding-right: 20px;
+    }
+
+    .form-item {
+      margin: 0;
+    }
+
+    .chosen-single,
+    .chosen-container.chosen-container-multi {
+      width: 208px;
+    }
+
+  }
+
+  .field--name-field-date {
+    .form-item,
+    input {
+      width: 100%;
+    }
+
+    input {
+      border-radius: 5px;
+    }
+  }
+
+  .field--name-field-payment-method {
+    .form-item-field-payment-method-other {
+      margin-left: 15px !important;
+    }
+  }
+
+  .tabledrag-toggle-weight-wrapper {
+    display: none;
+
+    + div.tableresponsive-toggle-columns + table[id^=field-expense-item-values] + div.clearfix {
+      font-size: 0;
+      color: transparent;
+    }
+  }
+
+  div[id^=edit-field-expense-item-] {
+    thead {
+      display: none;
+    }
+
+    .paragraph-top {
+      // background-color: pink;
+    }
+
+    .paragraphs-subform {
+      @include display-flex();
+      @include flex("justify-content", "flex-start");
+      @include flex("flex-wrap", "wrap");
+      margin-right: 30px;
+
+      > * {
+        width: 225px;
+        margin-right: 15px;
+      }
+
+      .form-item {
+        margin: 0;
+      }
+
+      .chosen-container {
+        width: 100% !important;
+        margin-bottom: 8px;
+
+        &.chosen-container-multi .chosen-choices {
+          border-radius: 5px;
+        }
+      }
+
+      .field--name-field-unit-cost,
+      .field--name-field-no-of-units {
+        .form-number {
+          height: 25px;
+          border-radius: 5px;
+        }
+      }
+
+      .field--name-field-unit-cost {
+        width: 115px;
+
+        .form-number {
+          width: 100px;
+        }
+      }
+
+      .field--name-field-no-of-units {
+        width: 100px;
+      }
+
+      .field--name-field-merchant {
+        width: 150px;
+      }
+
+      .field--name-field-categories {
+        width: 275px;
+      }
+
+    }
+  }
+
+  #edit-field-expense-item-add-more {
+    margin-left: 40px;
+  }
+}

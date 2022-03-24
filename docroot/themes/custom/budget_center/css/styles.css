@@ -645,7 +645,10 @@ header.content-header {
 }
 
 .page--expenses-item,
-.page--expenses-line {
+.page--expenses-line,
+.page--expenses-daily,
+.page--expenses-weekly,
+.page--expenses-monthly {
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6 */
   display: -moz-box;
@@ -664,11 +667,17 @@ header.content-header {
   /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 .page--expenses-item > *,
-.page--expenses-line > * {
+.page--expenses-line > *,
+.page--expenses-daily > *,
+.page--expenses-weekly > *,
+.page--expenses-monthly > * {
   width: 100%;
 }
 .page--expenses-item > .view-filters,
-.page--expenses-line > .view-filters {
+.page--expenses-line > .view-filters,
+.page--expenses-daily > .view-filters,
+.page--expenses-weekly > .view-filters,
+.page--expenses-monthly > .view-filters {
   -webkit-box-ordinal-group: 2;
   /* OLD - iOS 6-, Safari 3.1-6 */
   -moz-box-ordinal-group: 2;
@@ -685,7 +694,10 @@ header.content-header {
   background-color: #f9f9f9;
 }
 .page--expenses-item > .view-filters:before,
-.page--expenses-line > .view-filters:before {
+.page--expenses-line > .view-filters:before,
+.page--expenses-daily > .view-filters:before,
+.page--expenses-weekly > .view-filters:before,
+.page--expenses-monthly > .view-filters:before {
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6 */
   display: -moz-box;
@@ -721,20 +733,29 @@ header.content-header {
   font-size: 15px;
 }
 .page--expenses-item > .view-filters #edit-date-wrapper,
-.page--expenses-line > .view-filters #edit-date-wrapper {
+.page--expenses-line > .view-filters #edit-date-wrapper,
+.page--expenses-daily > .view-filters #edit-date-wrapper,
+.page--expenses-weekly > .view-filters #edit-date-wrapper,
+.page--expenses-monthly > .view-filters #edit-date-wrapper {
   margin: 40px 0 0;
   border: 0 none;
   padding: 0 15px;
 }
 .page--expenses-item > .view-filters #edit-date-wrapper legend,
-.page--expenses-line > .view-filters #edit-date-wrapper legend {
+.page--expenses-line > .view-filters #edit-date-wrapper legend,
+.page--expenses-daily > .view-filters #edit-date-wrapper legend,
+.page--expenses-weekly > .view-filters #edit-date-wrapper legend,
+.page--expenses-monthly > .view-filters #edit-date-wrapper legend {
   position: static;
   margin: 0;
   border: 0 none;
   font-weight: 400;
 }
 .page--expenses-item > .view-filters #edit-date-wrapper .fieldset-wrapper,
-.page--expenses-line > .view-filters #edit-date-wrapper .fieldset-wrapper {
+.page--expenses-line > .view-filters #edit-date-wrapper .fieldset-wrapper,
+.page--expenses-daily > .view-filters #edit-date-wrapper .fieldset-wrapper,
+.page--expenses-weekly > .view-filters #edit-date-wrapper .fieldset-wrapper,
+.page--expenses-monthly > .view-filters #edit-date-wrapper .fieldset-wrapper {
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6 */
   display: -moz-box;
@@ -753,19 +774,31 @@ header.content-header {
   /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 .page--expenses-item > .view-filters #edit-date-wrapper .fieldset-wrapper > *,
-.page--expenses-line > .view-filters #edit-date-wrapper .fieldset-wrapper > * {
+.page--expenses-line > .view-filters #edit-date-wrapper .fieldset-wrapper > *,
+.page--expenses-daily > .view-filters #edit-date-wrapper .fieldset-wrapper > *,
+.page--expenses-weekly > .view-filters #edit-date-wrapper .fieldset-wrapper > *,
+.page--expenses-monthly > .view-filters #edit-date-wrapper .fieldset-wrapper > * {
   width: 48%;
 }
 .page--expenses-item > .view-filters #edit-date-wrapper .fieldset-wrapper .form-item,
-.page--expenses-line > .view-filters #edit-date-wrapper .fieldset-wrapper .form-item {
+.page--expenses-line > .view-filters #edit-date-wrapper .fieldset-wrapper .form-item,
+.page--expenses-daily > .view-filters #edit-date-wrapper .fieldset-wrapper .form-item,
+.page--expenses-weekly > .view-filters #edit-date-wrapper .fieldset-wrapper .form-item,
+.page--expenses-monthly > .view-filters #edit-date-wrapper .fieldset-wrapper .form-item {
   margin: 0;
 }
 .page--expenses-item > .view-filters #edit-date-wrapper .fieldset-wrapper label,
-.page--expenses-line > .view-filters #edit-date-wrapper .fieldset-wrapper label {
+.page--expenses-line > .view-filters #edit-date-wrapper .fieldset-wrapper label,
+.page--expenses-daily > .view-filters #edit-date-wrapper .fieldset-wrapper label,
+.page--expenses-weekly > .view-filters #edit-date-wrapper .fieldset-wrapper label,
+.page--expenses-monthly > .view-filters #edit-date-wrapper .fieldset-wrapper label {
   display: none;
 }
 .page--expenses-item > .view-filters #edit-date-wrapper .fieldset-wrapper input,
-.page--expenses-line > .view-filters #edit-date-wrapper .fieldset-wrapper input {
+.page--expenses-line > .view-filters #edit-date-wrapper .fieldset-wrapper input,
+.page--expenses-daily > .view-filters #edit-date-wrapper .fieldset-wrapper input,
+.page--expenses-weekly > .view-filters #edit-date-wrapper .fieldset-wrapper input,
+.page--expenses-monthly > .view-filters #edit-date-wrapper .fieldset-wrapper input {
   width: 100%;
 }
 .page--expenses-item > .view-filters .form-item-payment-method,
@@ -775,7 +808,19 @@ header.content-header {
 .page--expenses-line > .view-filters .form-item-payment-method,
 .page--expenses-line > .view-filters .form-item-payee,
 .page--expenses-line > .view-filters .form-item-category,
-.page--expenses-line > .view-filters .form-item-item {
+.page--expenses-line > .view-filters .form-item-item,
+.page--expenses-daily > .view-filters .form-item-payment-method,
+.page--expenses-daily > .view-filters .form-item-payee,
+.page--expenses-daily > .view-filters .form-item-category,
+.page--expenses-daily > .view-filters .form-item-item,
+.page--expenses-weekly > .view-filters .form-item-payment-method,
+.page--expenses-weekly > .view-filters .form-item-payee,
+.page--expenses-weekly > .view-filters .form-item-category,
+.page--expenses-weekly > .view-filters .form-item-item,
+.page--expenses-monthly > .view-filters .form-item-payment-method,
+.page--expenses-monthly > .view-filters .form-item-payee,
+.page--expenses-monthly > .view-filters .form-item-category,
+.page--expenses-monthly > .view-filters .form-item-item {
   margin: 15px 0 0;
   padding: 0 15px;
   width: 100%;
@@ -787,7 +832,19 @@ header.content-header {
 .page--expenses-line > .view-filters .form-item-payment-method label,
 .page--expenses-line > .view-filters .form-item-payee label,
 .page--expenses-line > .view-filters .form-item-category label,
-.page--expenses-line > .view-filters .form-item-item label {
+.page--expenses-line > .view-filters .form-item-item label,
+.page--expenses-daily > .view-filters .form-item-payment-method label,
+.page--expenses-daily > .view-filters .form-item-payee label,
+.page--expenses-daily > .view-filters .form-item-category label,
+.page--expenses-daily > .view-filters .form-item-item label,
+.page--expenses-weekly > .view-filters .form-item-payment-method label,
+.page--expenses-weekly > .view-filters .form-item-payee label,
+.page--expenses-weekly > .view-filters .form-item-category label,
+.page--expenses-weekly > .view-filters .form-item-item label,
+.page--expenses-monthly > .view-filters .form-item-payment-method label,
+.page--expenses-monthly > .view-filters .form-item-payee label,
+.page--expenses-monthly > .view-filters .form-item-category label,
+.page--expenses-monthly > .view-filters .form-item-item label {
   text-transform: uppercase;
   font-weight: 400;
 }
@@ -798,11 +855,26 @@ header.content-header {
 .page--expenses-line > .view-filters .form-item-payment-method .chosen-container-multi,
 .page--expenses-line > .view-filters .form-item-payee .chosen-container-multi,
 .page--expenses-line > .view-filters .form-item-category .chosen-container-multi,
-.page--expenses-line > .view-filters .form-item-item .chosen-container-multi {
+.page--expenses-line > .view-filters .form-item-item .chosen-container-multi,
+.page--expenses-daily > .view-filters .form-item-payment-method .chosen-container-multi,
+.page--expenses-daily > .view-filters .form-item-payee .chosen-container-multi,
+.page--expenses-daily > .view-filters .form-item-category .chosen-container-multi,
+.page--expenses-daily > .view-filters .form-item-item .chosen-container-multi,
+.page--expenses-weekly > .view-filters .form-item-payment-method .chosen-container-multi,
+.page--expenses-weekly > .view-filters .form-item-payee .chosen-container-multi,
+.page--expenses-weekly > .view-filters .form-item-category .chosen-container-multi,
+.page--expenses-weekly > .view-filters .form-item-item .chosen-container-multi,
+.page--expenses-monthly > .view-filters .form-item-payment-method .chosen-container-multi,
+.page--expenses-monthly > .view-filters .form-item-payee .chosen-container-multi,
+.page--expenses-monthly > .view-filters .form-item-category .chosen-container-multi,
+.page--expenses-monthly > .view-filters .form-item-item .chosen-container-multi {
   width: 100% !important;
 }
 .page--expenses-item > .view-filters .form-item-category .shs-field-container,
-.page--expenses-line > .view-filters .form-item-category .shs-field-container {
+.page--expenses-line > .view-filters .form-item-category .shs-field-container,
+.page--expenses-daily > .view-filters .form-item-category .shs-field-container,
+.page--expenses-weekly > .view-filters .form-item-category .shs-field-container,
+.page--expenses-monthly > .view-filters .form-item-category .shs-field-container {
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6 */
   display: -moz-box;
@@ -821,45 +893,72 @@ header.content-header {
   /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 .page--expenses-item > .view-filters .form-item-category .shs-field-container > *,
-.page--expenses-line > .view-filters .form-item-category .shs-field-container > * {
+.page--expenses-line > .view-filters .form-item-category .shs-field-container > *,
+.page--expenses-daily > .view-filters .form-item-category .shs-field-container > *,
+.page--expenses-weekly > .view-filters .form-item-category .shs-field-container > *,
+.page--expenses-monthly > .view-filters .form-item-category .shs-field-container > * {
   margin-right: 5px;
 }
 .page--expenses-item > .view-filters .form-item-category .shs-field-container > *:last-child,
-.page--expenses-line > .view-filters .form-item-category .shs-field-container > *:last-child {
+.page--expenses-line > .view-filters .form-item-category .shs-field-container > *:last-child,
+.page--expenses-daily > .view-filters .form-item-category .shs-field-container > *:last-child,
+.page--expenses-weekly > .view-filters .form-item-category .shs-field-container > *:last-child,
+.page--expenses-monthly > .view-filters .form-item-category .shs-field-container > *:last-child {
   margin-right: 0;
 }
 .page--expenses-item > .view-filters .form-item-category .shs-widget-container,
-.page--expenses-line > .view-filters .form-item-category .shs-widget-container {
+.page--expenses-line > .view-filters .form-item-category .shs-widget-container,
+.page--expenses-daily > .view-filters .form-item-category .shs-widget-container,
+.page--expenses-weekly > .view-filters .form-item-category .shs-widget-container,
+.page--expenses-monthly > .view-filters .form-item-category .shs-widget-container {
   width: 100%;
 }
 .page--expenses-item > .view-filters .form-item-category .shs-widget-container .chosen-container.shs-select,
-.page--expenses-line > .view-filters .form-item-category .shs-widget-container .chosen-container.shs-select {
+.page--expenses-line > .view-filters .form-item-category .shs-widget-container .chosen-container.shs-select,
+.page--expenses-daily > .view-filters .form-item-category .shs-widget-container .chosen-container.shs-select,
+.page--expenses-weekly > .view-filters .form-item-category .shs-widget-container .chosen-container.shs-select,
+.page--expenses-monthly > .view-filters .form-item-category .shs-widget-container .chosen-container.shs-select {
   width: 100% !important;
 }
 .page--expenses-item > .view-filters .form-item-category .shs-addnew-container,
-.page--expenses-line > .view-filters .form-item-category .shs-addnew-container {
+.page--expenses-line > .view-filters .form-item-category .shs-addnew-container,
+.page--expenses-daily > .view-filters .form-item-category .shs-addnew-container,
+.page--expenses-weekly > .view-filters .form-item-category .shs-addnew-container,
+.page--expenses-monthly > .view-filters .form-item-category .shs-addnew-container {
   padding-left: 15px;
 }
 .page--expenses-item > .view-filters .form-item-category .shs-addnew-container .button.add-another,
-.page--expenses-line > .view-filters .form-item-category .shs-addnew-container .button.add-another {
+.page--expenses-line > .view-filters .form-item-category .shs-addnew-container .button.add-another,
+.page--expenses-daily > .view-filters .form-item-category .shs-addnew-container .button.add-another,
+.page--expenses-weekly > .view-filters .form-item-category .shs-addnew-container .button.add-another,
+.page--expenses-monthly > .view-filters .form-item-category .shs-addnew-container .button.add-another {
   border-radius: 5px;
   font-size: 12px;
   font-weight: 400;
   text-transform: uppercase;
 }
 .page--expenses-item > .view-filters .form-actions,
-.page--expenses-line > .view-filters .form-actions {
+.page--expenses-line > .view-filters .form-actions,
+.page--expenses-daily > .view-filters .form-actions,
+.page--expenses-weekly > .view-filters .form-actions,
+.page--expenses-monthly > .view-filters .form-actions {
   margin: 0;
   padding: 20px 15px;
   width: 100%;
 }
 .page--expenses-item > .view-filters .form-actions input,
-.page--expenses-line > .view-filters .form-actions input {
+.page--expenses-line > .view-filters .form-actions input,
+.page--expenses-daily > .view-filters .form-actions input,
+.page--expenses-weekly > .view-filters .form-actions input,
+.page--expenses-monthly > .view-filters .form-actions input {
   border-radius: 5px;
   text-transform: uppercase;
 }
 .page--expenses-item > .view-content,
-.page--expenses-line > .view-content {
+.page--expenses-line > .view-content,
+.page--expenses-daily > .view-content,
+.page--expenses-weekly > .view-content,
+.page--expenses-monthly > .view-content {
   -webkit-box-ordinal-group: 1;
   /* OLD - iOS 6-, Safari 3.1-6 */
   -moz-box-ordinal-group: 1;
@@ -875,15 +974,52 @@ header.content-header {
   min-width: 0;
 }
 .page--expenses-item table.table th,
-.page--expenses-line table.table th {
+.page--expenses-line table.table th,
+.page--expenses-daily table.table th,
+.page--expenses-weekly table.table th,
+.page--expenses-monthly table.table th {
   white-space: nowrap;
   height: 18px;
 }
 .page--expenses-item table.table td,
-.page--expenses-line table.table td {
+.page--expenses-line table.table td,
+.page--expenses-daily table.table td,
+.page--expenses-weekly table.table td,
+.page--expenses-monthly table.table td {
   white-space: nowrap;
   height: 18px;
 }
+.page--expenses-item .txn-ids,
+.page--expenses-item .txn-category,
+.page--expenses-line .txn-ids,
+.page--expenses-line .txn-category,
+.page--expenses-daily .txn-ids,
+.page--expenses-daily .txn-category,
+.page--expenses-weekly .txn-ids,
+.page--expenses-weekly .txn-category,
+.page--expenses-monthly .txn-ids,
+.page--expenses-monthly .txn-category {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 0 7px 1px;
+  border-radius: 4px;
+}
+.page--expenses-item .txn-ids,
+.page--expenses-line .txn-ids,
+.page--expenses-daily .txn-ids,
+.page--expenses-weekly .txn-ids,
+.page--expenses-monthly .txn-ids {
+  padding: 0 4px;
+}
+.page--expenses-item .txn-ids:hover,
+.page--expenses-line .txn-ids:hover,
+.page--expenses-daily .txn-ids:hover,
+.page--expenses-weekly .txn-ids:hover,
+.page--expenses-monthly .txn-ids:hover {
+  text-decoration: none;
+  background-color: #ccc;
+}
+
 .page-node-type-expense .block--expense-details table {
   width: 500px;
 }

@@ -32,11 +32,11 @@
             {bSearchable: false},
             {bSearchable: false},
             {bSearchable: false},
-            {bSearchable: false},
-            {bSearchable: false},
-            {bSearchable: false},
-            {bSearchable: false},
             null,
+            {bSearchable: false},
+            {bSearchable: false},
+            {bSearchable: false},
+            {bSearchable: false},
             {bSearchable: false},
             {bSearchable: false},
             {bSearchable: false},
@@ -67,14 +67,54 @@
           aoColumns: [
             {bSearchable: false},
             {bSearchable: false},
-            {bSearchable: false},
-            {bSearchable: false},
-            {bSearchable: false},
-            {bSearchable: false},
             null,
             {bSearchable: false},
             {bSearchable: false},
+            {bSearchable: false},
+            {bSearchable: false},
+            {bSearchable: false},
+            {bSearchable: false},
           ]
+        });
+      });
+
+      // Daily expenses.
+      $(document).ready( function () {
+        $(".page--expenses-daily table.table").DataTable({
+          autoWidth: false,
+          bSort: false,
+          bLengthChange: false,
+          iDisplayLength: 10,
+          fixedHeader: {
+            header: true,
+          },
+          scrollX:        true,
+          scrollCollapse: true,
+          fixedColumns:   {
+            left: 2,
+            right: 3,
+          },
+          bFilter: false,
+        });
+      });
+
+      // Weekly expenses.
+      $(document).ready( function () {
+        $(".page--expenses-weekly table.table").DataTable({
+          autoWidth: false,
+          bSort: false,
+          bLengthChange: false,
+          iDisplayLength: 10,
+          fixedHeader: {
+            header: true,
+          },
+          scrollX:        true,
+          scrollCollapse: true,
+          fixedColumns:   {
+            left: 2,
+            right: 3,
+          },
+          bFilter: false,
         });
       });
 

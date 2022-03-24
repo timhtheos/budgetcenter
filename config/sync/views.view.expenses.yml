@@ -521,7 +521,18 @@ display:
       cache:
         type: tag
         options: {  }
-      empty: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: "<h2>There are no results in the given filter criteria.</h2>\r\n<p>Please redo your filter criteria.</p>"
+          tokenize: false
       sorts:
         created:
           id: created
@@ -599,6 +610,7 @@ display:
           plugin_id: bundle
           value:
             expense: expense
+          group: 1
           expose:
             operator_limit_selection: false
             operator_list: {  }
@@ -650,64 +662,10 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        field_txn_payment_method_target_id:
-          id: field_txn_payment_method_target_id
-          table: node__field_txn_payment_method
-          field: field_txn_payment_method_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_txn_payment_method_target_id_op
-            label: 'Payment methods'
-            description: ''
-            use_operator: false
-            operator: field_txn_payment_method_target_id_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: payment-method
-            required: false
-            remember: true
-            multiple: true
-            remember_roles:
-              authenticated: authenticated
-              administrator: administrator
-              account_manager: account_manager
-              anonymous: '0'
-            reduce: false
-            chosen_override: 1
-            disable_search: 0
-            search_contains: 1
-            placeholder_text_multiple: 'Choose some payment methods'
-            placeholder_text_single: ''
-            no_results_text: 'Payment method not found:'
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: true
-          vid: payment_methods
-          type: select
-          hierarchy: true
-          limit: true
-          error_message: true
-        field_txn_payee_target_id:
-          id: field_txn_payee_target_id
-          table: paragraph__field_txn_payee
-          field: field_txn_payee_target_id
+        field_txn_item_target_id:
+          id: field_txn_item_target_id
+          table: paragraph__field_txn_item
+          field: field_txn_item_target_id
           relationship: field_txn_items
           group_type: group
           admin_label: ''
@@ -717,14 +675,14 @@ display:
           group: 1
           exposed: true
           expose:
-            operator_id: payee
-            label: Establishments
+            operator_id: field_txn_item_target_id_op
+            label: Items
             description: ''
             use_operator: false
-            operator: field_txn_payee_target_id_op
+            operator: field_txn_item_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: payee
+            identifier: item
             required: false
             remember: true
             multiple: true
@@ -734,12 +692,6 @@ display:
               account_manager: account_manager
               anonymous: '0'
             reduce: false
-            chosen_override: 1
-            disable_search: 0
-            search_contains: 1
-            placeholder_text_multiple: 'Choose some establishments'
-            placeholder_text_single: ''
-            no_results_text: 'Establishment not found:'
           is_grouped: false
           group_info:
             label: ''
@@ -753,7 +705,7 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: true
-          vid: payees
+          vid: items
           type: select
           hierarchy: true
           limit: true
@@ -812,10 +764,10 @@ display:
           hierarchy: true
           limit: true
           error_message: true
-        field_txn_item_target_id:
-          id: field_txn_item_target_id
-          table: paragraph__field_txn_item
-          field: field_txn_item_target_id
+        field_txn_payee_target_id:
+          id: field_txn_payee_target_id
+          table: paragraph__field_txn_payee
+          field: field_txn_payee_target_id
           relationship: field_txn_items
           group_type: group
           admin_label: ''
@@ -825,14 +777,14 @@ display:
           group: 1
           exposed: true
           expose:
-            operator_id: field_txn_item_target_id_op
-            label: Items
+            operator_id: payee
+            label: Establishments
             description: ''
             use_operator: false
-            operator: field_txn_item_target_id_op
+            operator: field_txn_payee_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: item
+            identifier: payee
             required: false
             remember: true
             multiple: true
@@ -842,6 +794,12 @@ display:
               account_manager: account_manager
               anonymous: '0'
             reduce: false
+            chosen_override: 1
+            disable_search: 0
+            search_contains: 1
+            placeholder_text_multiple: 'Choose some establishments'
+            placeholder_text_single: ''
+            no_results_text: 'Establishment not found:'
           is_grouped: false
           group_info:
             label: ''
@@ -855,11 +813,69 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: true
-          vid: items
+          vid: payees
           type: select
           hierarchy: true
           limit: true
           error_message: true
+        field_txn_payment_method_target_id:
+          id: field_txn_payment_method_target_id
+          table: node__field_txn_payment_method
+          field: field_txn_payment_method_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_txn_payment_method_target_id_op
+            label: 'Payment methods'
+            description: ''
+            use_operator: false
+            operator: field_txn_payment_method_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: payment-method
+            required: false
+            remember: true
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              administrator: administrator
+              account_manager: account_manager
+              anonymous: '0'
+            reduce: false
+            chosen_override: 1
+            disable_search: 0
+            search_contains: 1
+            placeholder_text_multiple: 'Choose some payment methods'
+            placeholder_text_single: ''
+            no_results_text: 'Payment method not found:'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: true
+          vid: payment_methods
+          type: select
+          hierarchy: true
+          limit: true
+          error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       style:
         type: flipped_table
         options:
@@ -2150,6 +2166,7 @@ display:
         type: perm
         options:
           perm: 'access content'
+      empty: {  }
       sorts:
         created:
           id: created
@@ -2337,6 +2354,7 @@ display:
           separator: ''
           hide_empty: false
       defaults:
+        empty: false
         access: false
         title: false
         css_class: false
@@ -2452,146 +2470,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        nid_1:
-          id: nid_1
-          table: node_field_data
-          field: nid
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: nid
-          plugin_id: field
-          label: TIDs
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: true
-            path: 'node/{{ nid }}'
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: number_integer
-          settings:
-            thousand_separator: ''
-            prefix_suffix: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        title:
-          id: title
-          table: node_field_data
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: title
-          plugin_id: field
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_txn_date:
-          id: field_txn_date
+        field_txn_date_1:
+          id: field_txn_date_1
           table: node__field_txn_date
           field: field_txn_date
           relationship: none
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: Date
+          label: Week
           exclude: false
           alter:
             alter_text: false
@@ -2636,8 +2523,264 @@ display:
           type: datetime_custom
           settings:
             timezone_override: ''
-            date_format: 'dMo, D.'
+            date_format: W
           group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_txn_date:
+          id: field_txn_date
+          table: node__field_txn_date
+          field: field_txn_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: YYYY/MM/DD
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: datetime_custom
+          settings:
+            timezone_override: ''
+            date_format: 'Y/m/d, D.'
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        nid_1:
+          id: nid_1
+          table: node_field_data
+          field: nid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: nid
+          plugin_id: field
+          label: 'TXN IDs'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: true
+            path: 'node/{{ nid }}'
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: txn-ids
+            prefix: ''
+            suffix: ''
+            target: _blank
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_txn_category:
+          id: field_txn_category
+          table: paragraph__field_txn_category
+          field: field_txn_category
+          relationship: field_txn_items
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: Categories
+          exclude: false
+          alter:
+            alter_text: true
+            text: '<span class="txn-category">{{ field_txn_category }}</span>'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_txn_payee:
+          id: field_txn_payee
+          table: paragraph__field_txn_payee
+          field: field_txn_payee
+          relationship: field_txn_items
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Establishments / Payees'
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -2655,8 +2798,8 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: 'Payment method'
-          exclude: false
+          label: 'Payment methods'
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -2718,8 +2861,8 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: Buyer
-          exclude: false
+          label: By
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -2773,15 +2916,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_txn_payee:
-          id: field_txn_payee
-          table: paragraph__field_txn_payee
-          field: field_txn_payee
-          relationship: field_txn_items
+        nid_2:
+          id: nid_2
+          table: node_field_data
+          field: nid
+          relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: nid
           plugin_id: field
-          label: 'Establishment payee'
+          label: Txns
           exclude: false
           alter:
             alter_text: false
@@ -2822,74 +2967,12 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
+          click_sort_column: value
+          type: number_integer
           settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_txn_category:
-          id: field_txn_category
-          table: paragraph__field_txn_category
-          field: field_txn_category
-          relationship: field_txn_items
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: Categories
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
+            thousand_separator: ''
+            prefix_suffix: false
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -3246,13 +3329,14 @@ display:
           default_row_class: true
           columns:
             nid: nid
-            nid_1: nid_1
-            title: title
+            field_txn_date_1: field_txn_date_1
             field_txn_date: field_txn_date
+            nid_1: nid_1
+            field_txn_category: field_txn_category
+            field_txn_payee: field_txn_payee
             field_txn_payment_method: field_txn_payment_method
             field_txn_buyer: field_txn_buyer
-            field_txn_payee: field_txn_payee
-            field_txn_category: field_txn_category
+            nid_2: nid_2
             field_txn_item: field_txn_item
             field_txn_units: field_txn_units
             field_txn_unit_cost: field_txn_unit_cost
@@ -3274,32 +3358,17 @@ display:
               has_aggr_column: false
               aggr_column: views_aggregator_sum
               aggr_par_column: ''
-            nid_1:
+            field_txn_date_1:
               sortable: false
               default_sort_order: asc
-              align: ''
+              align: views-align-center
               separator: ''
               empty_column: false
               responsive: ''
               has_aggr: true
               aggr:
                 views_aggregator_enumerate: views_aggregator_enumerate
-              aggr_par: ''
-              has_aggr_column: false
-              aggr_column: views_aggregator_sum
-              aggr_par_column: ''
-            title:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-              has_aggr: false
-              aggr:
-                views_aggregator_first: views_aggregator_first
-                views_aggregator_group_and_compress: views_aggregator_group_and_compress
-              aggr_par: ''
+              aggr_par: ', '
               has_aggr_column: false
               aggr_column: views_aggregator_sum
               aggr_par_column: ''
@@ -3318,43 +3387,17 @@ display:
               has_aggr_column: true
               aggr_column: views_aggregator_replace
               aggr_par_column: TOTAL
-            field_txn_payment_method:
+            nid_1:
               sortable: false
               default_sort_order: asc
-              align: ''
+              align: views-align-left
               separator: ''
               empty_column: false
               responsive: ''
               has_aggr: true
               aggr:
                 views_aggregator_enumerate: views_aggregator_enumerate
-              aggr_par: ''
-              has_aggr_column: false
-              aggr_column: views_aggregator_sum
-              aggr_par_column: ''
-            field_txn_buyer:
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-              has_aggr: true
-              aggr:
-                views_aggregator_enumerate: views_aggregator_enumerate
-              aggr_par: ''
-              has_aggr_column: false
-              aggr_column: views_aggregator_sum
-              aggr_par_column: ''
-            field_txn_payee:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-              has_aggr: true
-              aggr:
-                views_aggregator_enumerate: views_aggregator_enumerate
-              aggr_par: ''
+              aggr_par: ' '
               has_aggr_column: false
               aggr_column: views_aggregator_sum
               aggr_par_column: ''
@@ -3366,14 +3409,68 @@ display:
               has_aggr: true
               aggr:
                 views_aggregator_enumerate: views_aggregator_enumerate
-              aggr_par: ''
+              aggr_par: ' '
               has_aggr_column: false
               aggr_column: views_aggregator_replace
+              aggr_par_column: ''
+            field_txn_payee:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+              has_aggr: true
+              aggr:
+                views_aggregator_enumerate: views_aggregator_enumerate
+              aggr_par: '; '
+              has_aggr_column: false
+              aggr_column: views_aggregator_sum
+              aggr_par_column: ''
+            field_txn_payment_method:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+              has_aggr: true
+              aggr:
+                views_aggregator_enumerate: views_aggregator_enumerate
+              aggr_par: '; '
+              has_aggr_column: false
+              aggr_column: views_aggregator_sum
+              aggr_par_column: ''
+            field_txn_buyer:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+              has_aggr: true
+              aggr:
+                views_aggregator_enumerate: views_aggregator_enumerate
+              aggr_par: ', '
+              has_aggr_column: false
+              aggr_column: views_aggregator_sum
+              aggr_par_column: ''
+            nid_2:
+              sortable: false
+              default_sort_order: asc
+              align: views-align-center
+              separator: ''
+              empty_column: false
+              responsive: ''
+              has_aggr: true
+              aggr:
+                views_aggregator_count_unique: views_aggregator_count_unique
+              aggr_par: ''
+              has_aggr_column: false
+              aggr_column: views_aggregator_sum
               aggr_par_column: ''
             field_txn_item:
               sortable: false
               default_sort_order: asc
-              align: ''
+              align: views-align-center
               separator: ''
               empty_column: false
               responsive: ''
@@ -3607,7 +3704,7 @@ display:
           entity_type: node
           entity_field: nid
           plugin_id: field
-          label: TID
+          label: 'TXN ID'
           exclude: false
           alter:
             alter_text: false
@@ -3624,7 +3721,7 @@ display:
             link_class: ''
             prefix: ''
             suffix: ''
-            target: ''
+            target: _blank
             nl2br: false
             max_length: 0
             word_boundary: true
@@ -3673,7 +3770,7 @@ display:
           entity_type: paragraph
           entity_field: id
           plugin_id: field
-          label: TIID
+          label: 'ITEM ID'
           exclude: false
           alter:
             alter_text: false
@@ -3727,71 +3824,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        title:
-          id: title
-          table: node_field_data
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: title
-          plugin_id: field
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
         field_txn_date:
           id: field_txn_date
           table: node__field_txn_date
@@ -3800,7 +3832,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: Date
+          label: YYYY/MM/DD
           exclude: false
           alter:
             alter_text: false
@@ -3845,7 +3877,7 @@ display:
           type: datetime_custom
           settings:
             timezone_override: ''
-            date_format: 'M. d, Y, D.'
+            date_format: 'Y/m/d, D.'
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -3856,141 +3888,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_txn_payment_method:
-          id: field_txn_payment_method
-          table: node__field_txn_payment_method
-          field: field_txn_payment_method
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: 'Payment method'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_txn_buyer:
-          id: field_txn_buyer
-          table: node__field_txn_buyer
-          field: field_txn_buyer
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: Buyer
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_txn_payee:
-          id: field_txn_payee
-          table: paragraph__field_txn_payee
-          field: field_txn_payee
+        field_txn_item:
+          id: field_txn_item
+          table: paragraph__field_txn_item
+          field: field_txn_item
           relationship: field_txn_items
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: 'Establishment payee'
+          label: Items
           exclude: false
           alter:
             alter_text: false
@@ -4056,6 +3962,69 @@ display:
           label: Categories
           exclude: false
           alter:
+            alter_text: true
+            text: '<span class="txn-category">{{ field_txn_category }}</span>'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_txn_payee:
+          id: field_txn_payee
+          table: paragraph__field_txn_payee
+          field: field_txn_payee
+          relationship: field_txn_items
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Establishments / Payees'
+          exclude: false
+          alter:
             alter_text: false
             text: ''
             make_link: false
@@ -4108,15 +4077,78 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_txn_item:
-          id: field_txn_item
-          table: paragraph__field_txn_item
-          field: field_txn_item
-          relationship: field_txn_items
+        field_txn_payment_method:
+          id: field_txn_payment_method
+          table: node__field_txn_payment_method
+          field: field_txn_payment_method
+          relationship: none
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: Items
+          label: 'Payment methods'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_txn_buyer:
+          id: field_txn_buyer
+          table: node__field_txn_buyer
+          field: field_txn_buyer
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: By
           exclude: false
           alter:
             alter_text: false
@@ -4984,7 +5016,7 @@ display:
           entity_type: node
           entity_field: nid
           plugin_id: field
-          label: TID
+          label: 'TXN ID'
           exclude: false
           alter:
             alter_text: false
@@ -5001,7 +5033,7 @@ display:
             link_class: ''
             prefix: ''
             suffix: ''
-            target: ''
+            target: _blank
             nl2br: false
             max_length: 0
             word_boundary: true
@@ -5113,7 +5145,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: Date
+          label: YYYY/MM/DD
           exclude: false
           alter:
             alter_text: false
@@ -5158,7 +5190,7 @@ display:
           type: datetime_custom
           settings:
             timezone_override: ''
-            date_format: 'M. d, Y, D.'
+            date_format: 'Y/m/d, D.'
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -5169,141 +5201,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_txn_payment_method:
-          id: field_txn_payment_method
-          table: node__field_txn_payment_method
-          field: field_txn_payment_method
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: 'Payment method'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_txn_buyer:
-          id: field_txn_buyer
-          table: node__field_txn_buyer
-          field: field_txn_buyer
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: Buyer
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_txn_payee:
-          id: field_txn_payee
-          table: paragraph__field_txn_payee
-          field: field_txn_payee
+        field_txn_item_1:
+          id: field_txn_item_1
+          table: paragraph__field_txn_item
+          field: field_txn_item
           relationship: field_txn_items
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: 'Establishment payee'
+          label: Items
           exclude: false
           alter:
             alter_text: false
@@ -5369,6 +5275,69 @@ display:
           label: Categories
           exclude: false
           alter:
+            alter_text: true
+            text: '<span class="txn-category">{{ field_txn_category }}</span>'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_txn_payee:
+          id: field_txn_payee
+          table: paragraph__field_txn_payee
+          field: field_txn_payee
+          relationship: field_txn_items
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Establishments / Payees'
+          exclude: false
+          alter:
             alter_text: false
             text: ''
             make_link: false
@@ -5421,15 +5390,78 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_txn_item_1:
-          id: field_txn_item_1
-          table: paragraph__field_txn_item
-          field: field_txn_item
-          relationship: field_txn_items
+        field_txn_payment_method:
+          id: field_txn_payment_method
+          table: node__field_txn_payment_method
+          field: field_txn_payment_method
+          relationship: none
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: Items
+          label: 'Payment methods'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_txn_buyer:
+          id: field_txn_buyer
+          table: node__field_txn_buyer
+          field: field_txn_buyer
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: By
           exclude: false
           alter:
             alter_text: false
@@ -5834,12 +5866,12 @@ display:
             nid_1: nid_1
             title: title
             field_txn_date: field_txn_date
+            field_txn_item_1: field_txn_item_1
+            field_txn_category: field_txn_category
+            field_txn_payee: field_txn_payee
             field_txn_payment_method: field_txn_payment_method
             field_txn_buyer: field_txn_buyer
-            field_txn_payee: field_txn_payee
-            field_txn_category: field_txn_category
             field_txn_item: field_txn_item
-            field_txn_item_1: field_txn_item_1
             field_txn_units: field_txn_units
             field_txn_unit_cost: field_txn_unit_cost
             field_views_simple_math_field: field_views_simple_math_field
@@ -5904,6 +5936,46 @@ display:
               has_aggr_column: true
               aggr_column: views_aggregator_replace
               aggr_par_column: TOTAL
+            field_txn_item_1:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+              has_aggr: true
+              aggr:
+                views_aggregator_enumerate: views_aggregator_enumerate
+              aggr_par: '; '
+              has_aggr_column: false
+              aggr_column: views_aggregator_sum
+              aggr_par_column: ''
+            field_txn_category:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+              has_aggr: true
+              aggr:
+                views_aggregator_enumerate: views_aggregator_enumerate
+              aggr_par: ' '
+              has_aggr_column: false
+              aggr_column: views_aggregator_replace
+              aggr_par_column: ''
+            field_txn_payee:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+              has_aggr: true
+              aggr:
+                views_aggregator_enumerate: views_aggregator_enumerate
+              aggr_par: '; '
+              has_aggr_column: false
+              aggr_column: views_aggregator_sum
+              aggr_par_column: ''
             field_txn_payment_method:
               sortable: false
               default_sort_order: asc
@@ -5930,32 +6002,6 @@ display:
               has_aggr_column: false
               aggr_column: views_aggregator_sum
               aggr_par_column: ''
-            field_txn_payee:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-              has_aggr: true
-              aggr:
-                views_aggregator_enumerate: views_aggregator_enumerate
-              aggr_par: ''
-              has_aggr_column: false
-              aggr_column: views_aggregator_sum
-              aggr_par_column: ''
-            field_txn_category:
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-              has_aggr: true
-              aggr:
-                views_aggregator_enumerate: views_aggregator_enumerate
-              aggr_par: ', '
-              has_aggr_column: false
-              aggr_column: views_aggregator_replace
-              aggr_par_column: ''
             field_txn_item:
               sortable: false
               default_sort_order: asc
@@ -5969,20 +6015,6 @@ display:
               aggr_par: ''
               has_aggr_column: false
               aggr_column: views_aggregator_replace
-              aggr_par_column: ''
-            field_txn_item_1:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-              has_aggr: true
-              aggr:
-                views_aggregator_enumerate: views_aggregator_enumerate
-              aggr_par: '; '
-              has_aggr_column: false
-              aggr_column: views_aggregator_sum
               aggr_par_column: ''
             field_txn_units:
               sortable: false
@@ -7113,71 +7145,6 @@ display:
     display_options:
       title: 'Weekly expenses'
       fields:
-        title:
-          id: title
-          table: node_field_data
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: title
-          plugin_id: field
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
         field_txn_date:
           id: field_txn_date
           table: node__field_txn_date
@@ -7186,7 +7153,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: 'Week No.'
+          label: 'Date (Week Year)'
           exclude: true
           alter:
             alter_text: false
@@ -7242,15 +7209,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_txn_date_1:
-          id: field_txn_date_1
+        field_txn_date_2:
+          id: field_txn_date_2
           table: node__field_txn_date
           field: field_txn_date
           relationship: none
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: 'Week No.'
+          label: YYYY/MM
           exclude: false
           alter:
             alter_text: false
@@ -7295,7 +7262,7 @@ display:
           type: datetime_custom
           settings:
             timezone_override: ''
-            date_format: 'W (F), Y'
+            date_format: Y/m
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -7306,15 +7273,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_txn_payment_method:
-          id: field_txn_payment_method
-          table: node__field_txn_payment_method
-          field: field_txn_payment_method
+        field_txn_date_1:
+          id: field_txn_date_1
+          table: node__field_txn_date
+          field: field_txn_date
           relationship: none
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: 'Payment method'
+          label: Week
           exclude: false
           alter:
             alter_text: false
@@ -7355,137 +7322,12 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
+          click_sort_column: value
+          type: datetime_custom
           settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_txn_buyer:
-          id: field_txn_buyer
-          table: node__field_txn_buyer
-          field: field_txn_buyer
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: Buyer
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_txn_payee:
-          id: field_txn_payee
-          table: paragraph__field_txn_payee
-          field: field_txn_payee
-          relationship: field_txn_items
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: 'Establishment payee'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
+            timezone_override: ''
+            date_format: W
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -7549,6 +7391,261 @@ display:
           settings:
             link: false
           group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_txn_payee:
+          id: field_txn_payee
+          table: paragraph__field_txn_payee
+          field: field_txn_payee
+          relationship: field_txn_items
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Establishments / Payees'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_txn_payment_method:
+          id: field_txn_payment_method
+          table: node__field_txn_payment_method
+          field: field_txn_payment_method
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Payment methods'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_txn_buyer:
+          id: field_txn_buyer
+          table: node__field_txn_buyer
+          field: field_txn_buyer
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: By
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: nid
+          plugin_id: field
+          label: Txns
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: false
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -7903,13 +8000,14 @@ display:
           row_class: ''
           default_row_class: true
           columns:
-            title: title
             field_txn_date: field_txn_date
+            field_txn_date_2: field_txn_date_2
             field_txn_date_1: field_txn_date_1
             field_txn_payment_method: field_txn_payment_method
             field_txn_buyer: field_txn_buyer
             field_txn_payee: field_txn_payee
             field_txn_category: field_txn_category
+            nid: nid
             field_txn_item: field_txn_item
             field_txn_units: field_txn_units
             field_txn_unit_cost: field_txn_unit_cost
@@ -7917,21 +8015,6 @@ display:
             nothing: nothing
           default: '-1'
           info:
-            title:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-              has_aggr: false
-              aggr:
-                views_aggregator_first: views_aggregator_first
-                views_aggregator_group_and_compress: views_aggregator_group_and_compress
-              aggr_par: ''
-              has_aggr_column: false
-              aggr_column: views_aggregator_sum
-              aggr_par_column: ''
             field_txn_date:
               sortable: false
               default_sort_order: asc
@@ -7947,10 +8030,24 @@ display:
               has_aggr_column: true
               aggr_column: views_aggregator_replace
               aggr_par_column: TOTAL
+            field_txn_date_2:
+              sortable: false
+              default_sort_order: asc
+              align: views-align-right
+              separator: ''
+              empty_column: false
+              responsive: ''
+              has_aggr: true
+              aggr:
+                views_aggregator_enumerate: views_aggregator_enumerate
+              aggr_par: ''
+              has_aggr_column: false
+              aggr_column: views_aggregator_sum
+              aggr_par_column: ''
             field_txn_date_1:
               sortable: false
               default_sort_order: asc
-              align: ''
+              align: views-align-center
               separator: ''
               empty_column: false
               responsive: ''
@@ -7971,7 +8068,7 @@ display:
               has_aggr: true
               aggr:
                 views_aggregator_enumerate: views_aggregator_enumerate
-              aggr_par: ''
+              aggr_par: '; '
               has_aggr_column: false
               aggr_column: views_aggregator_sum
               aggr_par_column: ''
@@ -7983,7 +8080,7 @@ display:
               has_aggr: true
               aggr:
                 views_aggregator_enumerate: views_aggregator_enumerate
-              aggr_par: ''
+              aggr_par: ', '
               has_aggr_column: false
               aggr_column: views_aggregator_sum
               aggr_par_column: ''
@@ -7997,7 +8094,7 @@ display:
               has_aggr: true
               aggr:
                 views_aggregator_enumerate: views_aggregator_enumerate
-              aggr_par: ''
+              aggr_par: '; '
               has_aggr_column: false
               aggr_column: views_aggregator_sum
               aggr_par_column: ''
@@ -8009,14 +8106,28 @@ display:
               has_aggr: true
               aggr:
                 views_aggregator_enumerate: views_aggregator_enumerate
-              aggr_par: ''
+              aggr_par: '; '
               has_aggr_column: false
               aggr_column: views_aggregator_replace
+              aggr_par_column: ''
+            nid:
+              sortable: false
+              default_sort_order: asc
+              align: views-align-center
+              separator: ''
+              empty_column: false
+              responsive: ''
+              has_aggr: true
+              aggr:
+                views_aggregator_count_unique: views_aggregator_count_unique
+              aggr_par: ''
+              has_aggr_column: false
+              aggr_column: views_aggregator_sum
               aggr_par_column: ''
             field_txn_item:
               sortable: false
               default_sort_order: asc
-              align: ''
+              align: views-align-center
               separator: ''
               empty_column: false
               responsive: ''

@@ -1,0 +1,22 @@
+uuid: b02a0b0a-09d9-4f68-9902-c43674d11c19
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.component.field_component_block
+    - paragraphs.paragraphs_type.component
+  module:
+    - block_field
+id: paragraph.component.default
+targetEntityType: paragraph
+bundle: component
+mode: default
+content:
+  field_component_block:
+    type: block_field
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

@@ -14,7 +14,7 @@ dependencies:
 id: views_block__expenses_block_expense_details
 theme: budget_center
 region: content
-weight: 0
+weight: -1
 provider: null
 plugin: 'views_block:expenses-block_expense_details'
 settings:

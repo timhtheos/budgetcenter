@@ -1,0 +1,66 @@
+uuid: e24f08b1-5f06-4d99-abc4-4d5bf7952034
+langcode: en
+status: true
+dependencies: {  }
+id: expenses
+label: Expenses
+renderer: bootstrap_tabs
+hide_empty_tabs: false
+default_tab: 9999
+options:
+  bootstrap_tabs:
+    tabstyle: tabs
+    tabposition: basic
+    tabeffects:
+      fade: fade
+  quick_tabs:
+    ajax: false
+    class: ''
+    style: ''
+configuration_data:
+  -
+    title: 'Item Expenses'
+    weight: 0
+    type: view_content
+    content:
+      view_content:
+        options:
+          vid: expenses
+          display: page_expenses_item
+          args: ''
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      block_content:
+        options:
+          bid: 'views_block:expenses-block_expense_details'
+          block_title: ''
+          display_title: false
+      qtabs_content:
+        options:
+          machine_name: ''
+  -
+    title: 'Line Expenses'
+    weight: 0
+    type: view_content
+    content:
+      view_content:
+        options:
+          vid: expenses
+          display: page_expenses_line
+          args: ''
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      block_content:
+        options:
+          bid: 'views_block:expenses-block_expense_details'
+          block_title: ''
+          display_title: false
+      qtabs_content:
+        options:
+          machine_name: ''

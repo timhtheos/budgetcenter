@@ -79,7 +79,10 @@
 }
 
 .page--expenses-item,
-.page--expenses-line {
+.page--expenses-line,
+.page--expenses-daily,
+.page--expenses-weekly,
+.page--expenses-monthly {
   @include display-flex();
   @include flex("justify-content", "space-between");
 
@@ -242,4 +245,25 @@
       // background-color: #f5f5f2;
     }
   }
+  
+  .txn-ids,
+  .txn-category {
+    // background-color: #ccc;
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 0 7px 1px;
+    border-radius: 4px;
+  }
+
+  .txn-ids {
+    padding: 0 4px;
+
+    &:hover {
+      text-decoration: none;
+      background-color: #ccc;
+    }
+  }
+
+
+
 }

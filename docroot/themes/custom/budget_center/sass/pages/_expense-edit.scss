@@ -21,14 +21,18 @@
 
 // Needs to specify edit page.
 .path-node .node-expense-form,
-.path-node .node-expense-edit-form {
+.path-node .node-expense-edit-form,
+.path-clone .node-expense-quick-node-clone-form {
   .layout-region-node-secondary {
     display: none;
   }
 
   .field--name-field-date,
+  .field--name-field-txn-date,
   .field--name-field-payment-method > .form-item,
-  .field--name-field-buyer > .form-item {
+  .field--name-field-txn-payment-method > .form-item,
+  .field--name-field-buyer > .form-item,
+  .field--name-field-txn-buyer > .form-item {
     @include display-flex();
     @include flex("justify-content", "flex-start");
     @include flex("align-items", "center");
@@ -46,6 +50,7 @@
     > label {
       text-align: right;
       padding-right: 20px;
+      color: #333;
     }
 
     .form-item {
@@ -59,7 +64,8 @@
 
   }
 
-  .field--name-field-date {
+  .field--name-field-date,
+  .field--name-field-txn-date {
     .form-item,
     input {
       width: 100%;
@@ -70,8 +76,10 @@
     }
   }
 
-  .field--name-field-payment-method {
-    .form-item-field-payment-method-other {
+  .field--name-field-payment-method,
+  .field--name-field-txn-payment-method {
+    .form-item-field-payment-method-other,
+    .form-item-field-txn-payment-method-other {
       margin-left: 15px !important;
     }
   }
@@ -79,13 +87,15 @@
   .tabledrag-toggle-weight-wrapper {
     display: none;
 
-    + div.tableresponsive-toggle-columns + table[id^=field-expense-item-values] + div.clearfix {
+    + div.tableresponsive-toggle-columns + table[id^=field-expense-item-values] + div.clearfix,
+    + div.tableresponsive-toggle-columns + table[id^=field-txn-items-values] + div.clearfix {
       font-size: 0;
       color: transparent;
     }
   }
 
-  div[id^=edit-field-expense-item-] {
+  div[id^=edit-field-expense-item-],
+  div[id^=edit-field-txn-items-] {
     thead {
       display: none;
     }
@@ -118,38 +128,94 @@
         }
       }
 
+      .field--name-field-txn-type,
       .field--name-field-unit-cost,
-      .field--name-field-no-of-units {
+      .field--name-field-txn-unit-cost,
+      .field--name-field-no-of-units,
+      .field--name-field-txn-units {
         .form-number {
           height: 25px;
           border-radius: 5px;
         }
       }
 
-      .field--name-field-unit-cost {
-        width: 115px;
+      .field--name-field-txn-type {
+        width: 60px;
+      }
 
-        .form-number {
-          width: 100px;
+      .field--name-field-items {
+        @include flex-order(1);
+      }
+      .field--name-field-no-of-units {
+        @include flex-order(2);
+      }
+      .field--name-field-unit-cost {
+        @include flex-order(3);
+      }
+      .field--name-field-merchant {
+        @include flex-order(4);
+      }
+      .field--name-field-categories {
+        @include flex-order(5);
+      }
+
+
+      .field--name-field-no-of-units,
+      .field--name-field-txn-units {
+        width: 85px;
+      }
+
+      .field--name-field-txn-units {
+        width: 85px;
+      }
+
+      .field--name-field-unit-cost,
+      .field--name-field-txn-unit-cost {
+        width: 100px;
+
+        .field-prefix {
+          display: none;
         }
       }
 
-      .field--name-field-no-of-units {
-        width: 100px;
-      }
-
-      .field--name-field-merchant {
+      .field--name-field-merchant,
+      .field--name-field-txn-payee {
         width: 150px;
       }
 
-      .field--name-field-categories {
+      .field--name-field-categories,
+      .field--name-field-txn-category {
         width: 275px;
+      }
+
+      .field--name-field-txn-category {
+        width: 225px;
+        margin-right: 0;
       }
 
     }
   }
 
-  #edit-field-expense-item-add-more {
+  #edit-field-expense-item-add-more,
+  #edit-field-txn-items-add-more {
     margin-left: 40px;
   }
 }
+
+// Temp.
+// .layout-region-node-main {
+//   @include display-flex();
+//   @include flex("justify-content", "flex-start");
+//   @include flex("flex-wrap", "wrap");
+//   width: 100%;
+
+//   > * {
+//     width: 100%;
+//   }
+
+//   .field--name-field-expense-item,
+//   .field--name-field-txn-items {
+//     width: 48%;
+//   }
+// }
+

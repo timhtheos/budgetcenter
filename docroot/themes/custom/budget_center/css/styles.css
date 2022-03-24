@@ -2,6 +2,10 @@
   padding-top: 20px;
 }
 
+header.content-header {
+  overflow: visible;
+}
+
 #block-backtoexpenseexpenseaddedit {
   margin-bottom: 25px;
 }
@@ -22,15 +26,28 @@
 }
 
 .path-node .node-expense-form .layout-region-node-secondary,
-.path-node .node-expense-edit-form .layout-region-node-secondary {
+.path-node .node-expense-edit-form .layout-region-node-secondary,
+.path-clone .node-expense-quick-node-clone-form .layout-region-node-secondary {
   display: none;
 }
 .path-node .node-expense-form .field--name-field-date,
+.path-node .node-expense-form .field--name-field-txn-date,
 .path-node .node-expense-form .field--name-field-payment-method > .form-item,
+.path-node .node-expense-form .field--name-field-txn-payment-method > .form-item,
 .path-node .node-expense-form .field--name-field-buyer > .form-item,
+.path-node .node-expense-form .field--name-field-txn-buyer > .form-item,
 .path-node .node-expense-edit-form .field--name-field-date,
+.path-node .node-expense-edit-form .field--name-field-txn-date,
 .path-node .node-expense-edit-form .field--name-field-payment-method > .form-item,
-.path-node .node-expense-edit-form .field--name-field-buyer > .form-item {
+.path-node .node-expense-edit-form .field--name-field-txn-payment-method > .form-item,
+.path-node .node-expense-edit-form .field--name-field-buyer > .form-item,
+.path-node .node-expense-edit-form .field--name-field-txn-buyer > .form-item,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-date,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-date,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-payment-method > .form-item,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-payment-method > .form-item,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-buyer > .form-item,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-buyer > .form-item {
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6 */
   display: -moz-box;
@@ -56,87 +73,207 @@
   margin: 0 0 12px;
 }
 .path-node .node-expense-form .field--name-field-date > *,
+.path-node .node-expense-form .field--name-field-txn-date > *,
 .path-node .node-expense-form .field--name-field-payment-method > .form-item > *,
+.path-node .node-expense-form .field--name-field-txn-payment-method > .form-item > *,
 .path-node .node-expense-form .field--name-field-buyer > .form-item > *,
+.path-node .node-expense-form .field--name-field-txn-buyer > .form-item > *,
 .path-node .node-expense-edit-form .field--name-field-date > *,
+.path-node .node-expense-edit-form .field--name-field-txn-date > *,
 .path-node .node-expense-edit-form .field--name-field-payment-method > .form-item > *,
-.path-node .node-expense-edit-form .field--name-field-buyer > .form-item > * {
+.path-node .node-expense-edit-form .field--name-field-txn-payment-method > .form-item > *,
+.path-node .node-expense-edit-form .field--name-field-buyer > .form-item > *,
+.path-node .node-expense-edit-form .field--name-field-txn-buyer > .form-item > *,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-date > *,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-date > *,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-payment-method > .form-item > *,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-payment-method > .form-item > *,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-buyer > .form-item > *,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-buyer > .form-item > * {
   width: 208px;
 }
 .path-node .node-expense-form .field--name-field-date > *:first-child,
+.path-node .node-expense-form .field--name-field-txn-date > *:first-child,
 .path-node .node-expense-form .field--name-field-payment-method > .form-item > *:first-child,
+.path-node .node-expense-form .field--name-field-txn-payment-method > .form-item > *:first-child,
 .path-node .node-expense-form .field--name-field-buyer > .form-item > *:first-child,
+.path-node .node-expense-form .field--name-field-txn-buyer > .form-item > *:first-child,
 .path-node .node-expense-edit-form .field--name-field-date > *:first-child,
+.path-node .node-expense-edit-form .field--name-field-txn-date > *:first-child,
 .path-node .node-expense-edit-form .field--name-field-payment-method > .form-item > *:first-child,
-.path-node .node-expense-edit-form .field--name-field-buyer > .form-item > *:first-child {
+.path-node .node-expense-edit-form .field--name-field-txn-payment-method > .form-item > *:first-child,
+.path-node .node-expense-edit-form .field--name-field-buyer > .form-item > *:first-child,
+.path-node .node-expense-edit-form .field--name-field-txn-buyer > .form-item > *:first-child,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-date > *:first-child,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-date > *:first-child,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-payment-method > .form-item > *:first-child,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-payment-method > .form-item > *:first-child,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-buyer > .form-item > *:first-child,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-buyer > .form-item > *:first-child {
   width: 166px;
 }
 .path-node .node-expense-form .field--name-field-date h4.label,
 .path-node .node-expense-form .field--name-field-date > label,
+.path-node .node-expense-form .field--name-field-txn-date h4.label,
+.path-node .node-expense-form .field--name-field-txn-date > label,
 .path-node .node-expense-form .field--name-field-payment-method > .form-item h4.label,
 .path-node .node-expense-form .field--name-field-payment-method > .form-item > label,
+.path-node .node-expense-form .field--name-field-txn-payment-method > .form-item h4.label,
+.path-node .node-expense-form .field--name-field-txn-payment-method > .form-item > label,
 .path-node .node-expense-form .field--name-field-buyer > .form-item h4.label,
 .path-node .node-expense-form .field--name-field-buyer > .form-item > label,
+.path-node .node-expense-form .field--name-field-txn-buyer > .form-item h4.label,
+.path-node .node-expense-form .field--name-field-txn-buyer > .form-item > label,
 .path-node .node-expense-edit-form .field--name-field-date h4.label,
 .path-node .node-expense-edit-form .field--name-field-date > label,
+.path-node .node-expense-edit-form .field--name-field-txn-date h4.label,
+.path-node .node-expense-edit-form .field--name-field-txn-date > label,
 .path-node .node-expense-edit-form .field--name-field-payment-method > .form-item h4.label,
 .path-node .node-expense-edit-form .field--name-field-payment-method > .form-item > label,
+.path-node .node-expense-edit-form .field--name-field-txn-payment-method > .form-item h4.label,
+.path-node .node-expense-edit-form .field--name-field-txn-payment-method > .form-item > label,
 .path-node .node-expense-edit-form .field--name-field-buyer > .form-item h4.label,
-.path-node .node-expense-edit-form .field--name-field-buyer > .form-item > label {
+.path-node .node-expense-edit-form .field--name-field-buyer > .form-item > label,
+.path-node .node-expense-edit-form .field--name-field-txn-buyer > .form-item h4.label,
+.path-node .node-expense-edit-form .field--name-field-txn-buyer > .form-item > label,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-date h4.label,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-date > label,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-date h4.label,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-date > label,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-payment-method > .form-item h4.label,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-payment-method > .form-item > label,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-payment-method > .form-item h4.label,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-payment-method > .form-item > label,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-buyer > .form-item h4.label,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-buyer > .form-item > label,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-buyer > .form-item h4.label,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-buyer > .form-item > label {
   text-align: right;
   padding-right: 20px;
+  color: #333;
 }
 .path-node .node-expense-form .field--name-field-date .form-item,
+.path-node .node-expense-form .field--name-field-txn-date .form-item,
 .path-node .node-expense-form .field--name-field-payment-method > .form-item .form-item,
+.path-node .node-expense-form .field--name-field-txn-payment-method > .form-item .form-item,
 .path-node .node-expense-form .field--name-field-buyer > .form-item .form-item,
+.path-node .node-expense-form .field--name-field-txn-buyer > .form-item .form-item,
 .path-node .node-expense-edit-form .field--name-field-date .form-item,
+.path-node .node-expense-edit-form .field--name-field-txn-date .form-item,
 .path-node .node-expense-edit-form .field--name-field-payment-method > .form-item .form-item,
-.path-node .node-expense-edit-form .field--name-field-buyer > .form-item .form-item {
+.path-node .node-expense-edit-form .field--name-field-txn-payment-method > .form-item .form-item,
+.path-node .node-expense-edit-form .field--name-field-buyer > .form-item .form-item,
+.path-node .node-expense-edit-form .field--name-field-txn-buyer > .form-item .form-item,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-date .form-item,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-date .form-item,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-payment-method > .form-item .form-item,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-payment-method > .form-item .form-item,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-buyer > .form-item .form-item,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-buyer > .form-item .form-item {
   margin: 0;
 }
 .path-node .node-expense-form .field--name-field-date .chosen-single,
 .path-node .node-expense-form .field--name-field-date .chosen-container.chosen-container-multi,
+.path-node .node-expense-form .field--name-field-txn-date .chosen-single,
+.path-node .node-expense-form .field--name-field-txn-date .chosen-container.chosen-container-multi,
 .path-node .node-expense-form .field--name-field-payment-method > .form-item .chosen-single,
 .path-node .node-expense-form .field--name-field-payment-method > .form-item .chosen-container.chosen-container-multi,
+.path-node .node-expense-form .field--name-field-txn-payment-method > .form-item .chosen-single,
+.path-node .node-expense-form .field--name-field-txn-payment-method > .form-item .chosen-container.chosen-container-multi,
 .path-node .node-expense-form .field--name-field-buyer > .form-item .chosen-single,
 .path-node .node-expense-form .field--name-field-buyer > .form-item .chosen-container.chosen-container-multi,
+.path-node .node-expense-form .field--name-field-txn-buyer > .form-item .chosen-single,
+.path-node .node-expense-form .field--name-field-txn-buyer > .form-item .chosen-container.chosen-container-multi,
 .path-node .node-expense-edit-form .field--name-field-date .chosen-single,
 .path-node .node-expense-edit-form .field--name-field-date .chosen-container.chosen-container-multi,
+.path-node .node-expense-edit-form .field--name-field-txn-date .chosen-single,
+.path-node .node-expense-edit-form .field--name-field-txn-date .chosen-container.chosen-container-multi,
 .path-node .node-expense-edit-form .field--name-field-payment-method > .form-item .chosen-single,
 .path-node .node-expense-edit-form .field--name-field-payment-method > .form-item .chosen-container.chosen-container-multi,
+.path-node .node-expense-edit-form .field--name-field-txn-payment-method > .form-item .chosen-single,
+.path-node .node-expense-edit-form .field--name-field-txn-payment-method > .form-item .chosen-container.chosen-container-multi,
 .path-node .node-expense-edit-form .field--name-field-buyer > .form-item .chosen-single,
-.path-node .node-expense-edit-form .field--name-field-buyer > .form-item .chosen-container.chosen-container-multi {
+.path-node .node-expense-edit-form .field--name-field-buyer > .form-item .chosen-container.chosen-container-multi,
+.path-node .node-expense-edit-form .field--name-field-txn-buyer > .form-item .chosen-single,
+.path-node .node-expense-edit-form .field--name-field-txn-buyer > .form-item .chosen-container.chosen-container-multi,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-date .chosen-single,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-date .chosen-container.chosen-container-multi,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-date .chosen-single,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-date .chosen-container.chosen-container-multi,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-payment-method > .form-item .chosen-single,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-payment-method > .form-item .chosen-container.chosen-container-multi,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-payment-method > .form-item .chosen-single,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-payment-method > .form-item .chosen-container.chosen-container-multi,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-buyer > .form-item .chosen-single,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-buyer > .form-item .chosen-container.chosen-container-multi,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-buyer > .form-item .chosen-single,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-buyer > .form-item .chosen-container.chosen-container-multi {
   width: 208px;
 }
 .path-node .node-expense-form .field--name-field-date .form-item,
 .path-node .node-expense-form .field--name-field-date input,
+.path-node .node-expense-form .field--name-field-txn-date .form-item,
+.path-node .node-expense-form .field--name-field-txn-date input,
 .path-node .node-expense-edit-form .field--name-field-date .form-item,
-.path-node .node-expense-edit-form .field--name-field-date input {
+.path-node .node-expense-edit-form .field--name-field-date input,
+.path-node .node-expense-edit-form .field--name-field-txn-date .form-item,
+.path-node .node-expense-edit-form .field--name-field-txn-date input,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-date .form-item,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-date input,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-date .form-item,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-date input {
   width: 100%;
 }
 .path-node .node-expense-form .field--name-field-date input,
-.path-node .node-expense-edit-form .field--name-field-date input {
+.path-node .node-expense-form .field--name-field-txn-date input,
+.path-node .node-expense-edit-form .field--name-field-date input,
+.path-node .node-expense-edit-form .field--name-field-txn-date input,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-date input,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-date input {
   border-radius: 5px;
 }
 .path-node .node-expense-form .field--name-field-payment-method .form-item-field-payment-method-other,
-.path-node .node-expense-edit-form .field--name-field-payment-method .form-item-field-payment-method-other {
+.path-node .node-expense-form .field--name-field-payment-method .form-item-field-txn-payment-method-other,
+.path-node .node-expense-form .field--name-field-txn-payment-method .form-item-field-payment-method-other,
+.path-node .node-expense-form .field--name-field-txn-payment-method .form-item-field-txn-payment-method-other,
+.path-node .node-expense-edit-form .field--name-field-payment-method .form-item-field-payment-method-other,
+.path-node .node-expense-edit-form .field--name-field-payment-method .form-item-field-txn-payment-method-other,
+.path-node .node-expense-edit-form .field--name-field-txn-payment-method .form-item-field-payment-method-other,
+.path-node .node-expense-edit-form .field--name-field-txn-payment-method .form-item-field-txn-payment-method-other,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-payment-method .form-item-field-payment-method-other,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-payment-method .form-item-field-txn-payment-method-other,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-payment-method .form-item-field-payment-method-other,
+.path-clone .node-expense-quick-node-clone-form .field--name-field-txn-payment-method .form-item-field-txn-payment-method-other {
   margin-left: 15px !important;
 }
 .path-node .node-expense-form .tabledrag-toggle-weight-wrapper,
-.path-node .node-expense-edit-form .tabledrag-toggle-weight-wrapper {
+.path-node .node-expense-edit-form .tabledrag-toggle-weight-wrapper,
+.path-clone .node-expense-quick-node-clone-form .tabledrag-toggle-weight-wrapper {
   display: none;
 }
 .path-node .node-expense-form .tabledrag-toggle-weight-wrapper + div.tableresponsive-toggle-columns + table[id^=field-expense-item-values] + div.clearfix,
-.path-node .node-expense-edit-form .tabledrag-toggle-weight-wrapper + div.tableresponsive-toggle-columns + table[id^=field-expense-item-values] + div.clearfix {
+.path-node .node-expense-form .tabledrag-toggle-weight-wrapper + div.tableresponsive-toggle-columns + table[id^=field-txn-items-values] + div.clearfix,
+.path-node .node-expense-edit-form .tabledrag-toggle-weight-wrapper + div.tableresponsive-toggle-columns + table[id^=field-expense-item-values] + div.clearfix,
+.path-node .node-expense-edit-form .tabledrag-toggle-weight-wrapper + div.tableresponsive-toggle-columns + table[id^=field-txn-items-values] + div.clearfix,
+.path-clone .node-expense-quick-node-clone-form .tabledrag-toggle-weight-wrapper + div.tableresponsive-toggle-columns + table[id^=field-expense-item-values] + div.clearfix,
+.path-clone .node-expense-quick-node-clone-form .tabledrag-toggle-weight-wrapper + div.tableresponsive-toggle-columns + table[id^=field-txn-items-values] + div.clearfix {
   font-size: 0;
   color: transparent;
 }
 .path-node .node-expense-form div[id^=edit-field-expense-item-] thead,
-.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] thead {
+.path-node .node-expense-form div[id^=edit-field-txn-items-] thead,
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] thead,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] thead,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] thead,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] thead {
   display: none;
 }
 .path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform,
-.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform {
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform,
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform {
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6 */
   display: -moz-box;
@@ -162,52 +299,258 @@
   margin-right: 30px;
 }
 .path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform > *,
-.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform > * {
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform > *,
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform > *,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform > *,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform > *,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform > * {
   width: 225px;
   margin-right: 15px;
 }
 .path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .form-item,
-.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .form-item {
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform .form-item,
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .form-item,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform .form-item,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform .form-item,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform .form-item {
   margin: 0;
 }
 .path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .chosen-container,
-.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .chosen-container {
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform .chosen-container,
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .chosen-container,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform .chosen-container,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform .chosen-container,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform .chosen-container {
   width: 100% !important;
   margin-bottom: 8px;
 }
 .path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .chosen-container.chosen-container-multi .chosen-choices,
-.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .chosen-container.chosen-container-multi .chosen-choices {
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform .chosen-container.chosen-container-multi .chosen-choices,
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .chosen-container.chosen-container-multi .chosen-choices,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform .chosen-container.chosen-container-multi .chosen-choices,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform .chosen-container.chosen-container-multi .chosen-choices,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform .chosen-container.chosen-container-multi .chosen-choices {
   border-radius: 5px;
 }
+.path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-type .form-number,
 .path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-unit-cost .form-number,
+.path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-unit-cost .form-number,
 .path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-no-of-units .form-number,
+.path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-units .form-number,
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-type .form-number,
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-unit-cost .form-number,
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-unit-cost .form-number,
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-no-of-units .form-number,
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-units .form-number,
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-type .form-number,
 .path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-unit-cost .form-number,
-.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-no-of-units .form-number {
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-unit-cost .form-number,
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-no-of-units .form-number,
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-units .form-number,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-type .form-number,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-unit-cost .form-number,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-unit-cost .form-number,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-no-of-units .form-number,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-units .form-number,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-type .form-number,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-unit-cost .form-number,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-unit-cost .form-number,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-no-of-units .form-number,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-units .form-number,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-type .form-number,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-unit-cost .form-number,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-unit-cost .form-number,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-no-of-units .form-number,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-units .form-number {
   height: 25px;
   border-radius: 5px;
 }
-.path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-unit-cost,
-.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-unit-cost {
-  width: 115px;
+.path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-type,
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-type,
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-type,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-type,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-type,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-type {
+  width: 60px;
 }
-.path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-unit-cost .form-number,
-.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-unit-cost .form-number {
-  width: 100px;
+.path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-items,
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-items,
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-items,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-items,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-items,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-items {
+  -webkit-box-ordinal-group: 1;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-ordinal-group: 1;
+  /* OLD - Firefox 19- */
+  -ms-flex-order: 1;
+  /* TWEENER - IE 10 */
+  -webkit-order: 1;
+  /* NEW - Chrome */
+  order: 1;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 .path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-no-of-units,
-.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-no-of-units {
-  width: 100px;
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-no-of-units,
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-no-of-units,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-no-of-units,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-no-of-units,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-no-of-units {
+  -webkit-box-ordinal-group: 2;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-ordinal-group: 2;
+  /* OLD - Firefox 19- */
+  -ms-flex-order: 2;
+  /* TWEENER - IE 10 */
+  -webkit-order: 2;
+  /* NEW - Chrome */
+  order: 2;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+.path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-unit-cost,
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-unit-cost,
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-unit-cost,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-unit-cost,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-unit-cost,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-unit-cost {
+  -webkit-box-ordinal-group: 3;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-ordinal-group: 3;
+  /* OLD - Firefox 19- */
+  -ms-flex-order: 3;
+  /* TWEENER - IE 10 */
+  -webkit-order: 3;
+  /* NEW - Chrome */
+  order: 3;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 .path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-merchant,
-.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-merchant {
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-merchant,
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-merchant,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-merchant,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-merchant,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-merchant {
+  -webkit-box-ordinal-group: 4;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-ordinal-group: 4;
+  /* OLD - Firefox 19- */
+  -ms-flex-order: 4;
+  /* TWEENER - IE 10 */
+  -webkit-order: 4;
+  /* NEW - Chrome */
+  order: 4;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+.path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-categories,
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-categories,
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-categories,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-categories,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-categories,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-categories {
+  -webkit-box-ordinal-group: 5;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-ordinal-group: 5;
+  /* OLD - Firefox 19- */
+  -ms-flex-order: 5;
+  /* TWEENER - IE 10 */
+  -webkit-order: 5;
+  /* NEW - Chrome */
+  order: 5;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+.path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-no-of-units,
+.path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-units,
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-no-of-units,
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-units,
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-no-of-units,
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-units,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-no-of-units,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-units,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-no-of-units,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-units,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-no-of-units,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-units {
+  width: 85px;
+}
+.path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-units,
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-units,
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-units,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-units,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-units,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-units {
+  width: 85px;
+}
+.path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-unit-cost,
+.path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-unit-cost,
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-unit-cost,
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-unit-cost,
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-unit-cost,
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-unit-cost,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-unit-cost,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-unit-cost,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-unit-cost,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-unit-cost,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-unit-cost,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-unit-cost {
+  width: 100px;
+}
+.path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-unit-cost .field-prefix,
+.path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-unit-cost .field-prefix,
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-unit-cost .field-prefix,
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-unit-cost .field-prefix,
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-unit-cost .field-prefix,
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-unit-cost .field-prefix,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-unit-cost .field-prefix,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-unit-cost .field-prefix,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-unit-cost .field-prefix,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-unit-cost .field-prefix,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-unit-cost .field-prefix,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-unit-cost .field-prefix {
+  display: none;
+}
+.path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-merchant,
+.path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-payee,
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-merchant,
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-payee,
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-merchant,
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-payee,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-merchant,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-payee,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-merchant,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-payee,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-merchant,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-payee {
   width: 150px;
 }
 .path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-categories,
-.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-categories {
+.path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-category,
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-categories,
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-category,
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-categories,
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-category,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-categories,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-category,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-categories,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-category,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-categories,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-category {
   width: 275px;
 }
+.path-node .node-expense-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-category,
+.path-node .node-expense-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-category,
+.path-node .node-expense-edit-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-category,
+.path-node .node-expense-edit-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-category,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-expense-item-] .paragraphs-subform .field--name-field-txn-category,
+.path-clone .node-expense-quick-node-clone-form div[id^=edit-field-txn-items-] .paragraphs-subform .field--name-field-txn-category {
+  width: 225px;
+  margin-right: 0;
+}
 .path-node .node-expense-form #edit-field-expense-item-add-more,
-.path-node .node-expense-edit-form #edit-field-expense-item-add-more {
+.path-node .node-expense-form #edit-field-txn-items-add-more,
+.path-node .node-expense-edit-form #edit-field-expense-item-add-more,
+.path-node .node-expense-edit-form #edit-field-txn-items-add-more,
+.path-clone .node-expense-quick-node-clone-form #edit-field-expense-item-add-more,
+.path-clone .node-expense-quick-node-clone-form #edit-field-txn-items-add-more {
   margin-left: 40px;
 }
 
@@ -301,36 +644,261 @@
   color: #FFF;
 }
 
-.page-node-type-expense .view-header {
-  margin-bottom: 20px;
+.page--expenses-item,
+.page--expenses-line {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-justify-content: space-between;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-justify-content: space-between;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  justify-content: space-between;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
-.page-node-type-expense .view-header a {
-  border-radius: 0;
+.page--expenses-item > *,
+.page--expenses-line > * {
+  width: 100%;
+}
+.page--expenses-item > .view-filters,
+.page--expenses-line > .view-filters {
+  -webkit-box-ordinal-group: 2;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-ordinal-group: 2;
+  /* OLD - Firefox 19- */
+  -ms-flex-order: 2;
+  /* TWEENER - IE 10 */
+  -webkit-order: 2;
+  /* NEW - Chrome */
+  order: 2;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  width: 50%;
+  max-width: 300px;
+  position: relative;
+  background-color: #f9f9f9;
+}
+.page--expenses-item > .view-filters:before,
+.page--expenses-line > .view-filters:before {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-justify-content: center;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-justify-content: center;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  justify-content: center;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-align-items: center;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-align-items: center;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  align-items: center;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  content: "Filters";
+  text-transform: uppercase;
+  background-color: #ececec;
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-weight: 600;
+  font-size: 15px;
+}
+.page--expenses-item > .view-filters #edit-date-wrapper,
+.page--expenses-line > .view-filters #edit-date-wrapper {
+  margin: 40px 0 0;
   border: 0 none;
-  background-color: #ccc;
-  background-image: none;
-  color: #0074bd;
+  padding: 0 15px;
+}
+.page--expenses-item > .view-filters #edit-date-wrapper legend,
+.page--expenses-line > .view-filters #edit-date-wrapper legend {
+  position: static;
+  margin: 0;
+  border: 0 none;
+  font-weight: 400;
+}
+.page--expenses-item > .view-filters #edit-date-wrapper .fieldset-wrapper,
+.page--expenses-line > .view-filters #edit-date-wrapper .fieldset-wrapper {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-justify-content: space-between;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-justify-content: space-between;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  justify-content: space-between;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+.page--expenses-item > .view-filters #edit-date-wrapper .fieldset-wrapper > *,
+.page--expenses-line > .view-filters #edit-date-wrapper .fieldset-wrapper > * {
+  width: 48%;
+}
+.page--expenses-item > .view-filters #edit-date-wrapper .fieldset-wrapper .form-item,
+.page--expenses-line > .view-filters #edit-date-wrapper .fieldset-wrapper .form-item {
+  margin: 0;
+}
+.page--expenses-item > .view-filters #edit-date-wrapper .fieldset-wrapper label,
+.page--expenses-line > .view-filters #edit-date-wrapper .fieldset-wrapper label {
+  display: none;
+}
+.page--expenses-item > .view-filters #edit-date-wrapper .fieldset-wrapper input,
+.page--expenses-line > .view-filters #edit-date-wrapper .fieldset-wrapper input {
+  width: 100%;
+}
+.page--expenses-item > .view-filters .form-item-payment-method,
+.page--expenses-item > .view-filters .form-item-payee,
+.page--expenses-item > .view-filters .form-item-category,
+.page--expenses-item > .view-filters .form-item-item,
+.page--expenses-line > .view-filters .form-item-payment-method,
+.page--expenses-line > .view-filters .form-item-payee,
+.page--expenses-line > .view-filters .form-item-category,
+.page--expenses-line > .view-filters .form-item-item {
+  margin: 15px 0 0;
+  padding: 0 15px;
+  width: 100%;
+}
+.page--expenses-item > .view-filters .form-item-payment-method label,
+.page--expenses-item > .view-filters .form-item-payee label,
+.page--expenses-item > .view-filters .form-item-category label,
+.page--expenses-item > .view-filters .form-item-item label,
+.page--expenses-line > .view-filters .form-item-payment-method label,
+.page--expenses-line > .view-filters .form-item-payee label,
+.page--expenses-line > .view-filters .form-item-category label,
+.page--expenses-line > .view-filters .form-item-item label {
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.page--expenses-item > .view-filters .form-item-payment-method .chosen-container-multi,
+.page--expenses-item > .view-filters .form-item-payee .chosen-container-multi,
+.page--expenses-item > .view-filters .form-item-category .chosen-container-multi,
+.page--expenses-item > .view-filters .form-item-item .chosen-container-multi,
+.page--expenses-line > .view-filters .form-item-payment-method .chosen-container-multi,
+.page--expenses-line > .view-filters .form-item-payee .chosen-container-multi,
+.page--expenses-line > .view-filters .form-item-category .chosen-container-multi,
+.page--expenses-line > .view-filters .form-item-item .chosen-container-multi {
+  width: 100% !important;
+}
+.page--expenses-item > .view-filters .form-item-category .shs-field-container,
+.page--expenses-line > .view-filters .form-item-category .shs-field-container {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-justify-content: space-between;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-justify-content: space-between;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  justify-content: space-between;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+.page--expenses-item > .view-filters .form-item-category .shs-field-container > *,
+.page--expenses-line > .view-filters .form-item-category .shs-field-container > * {
+  margin-right: 5px;
+}
+.page--expenses-item > .view-filters .form-item-category .shs-field-container > *:last-child,
+.page--expenses-line > .view-filters .form-item-category .shs-field-container > *:last-child {
+  margin-right: 0;
+}
+.page--expenses-item > .view-filters .form-item-category .shs-widget-container,
+.page--expenses-line > .view-filters .form-item-category .shs-widget-container {
+  width: 100%;
+}
+.page--expenses-item > .view-filters .form-item-category .shs-widget-container .chosen-container.shs-select,
+.page--expenses-line > .view-filters .form-item-category .shs-widget-container .chosen-container.shs-select {
+  width: 100% !important;
+}
+.page--expenses-item > .view-filters .form-item-category .shs-addnew-container,
+.page--expenses-line > .view-filters .form-item-category .shs-addnew-container {
+  padding-left: 15px;
+}
+.page--expenses-item > .view-filters .form-item-category .shs-addnew-container .button.add-another,
+.page--expenses-line > .view-filters .form-item-category .shs-addnew-container .button.add-another {
+  border-radius: 5px;
+  font-size: 12px;
   font-weight: 400;
   text-transform: uppercase;
-  text-decoration: none;
-  margin-right: 10px;
-  padding: 5px 10px;
 }
-.page-node-type-expense .view-header a:hover {
-  background-color: #0074bd;
-  color: #ccc;
+.page--expenses-item > .view-filters .form-actions,
+.page--expenses-line > .view-filters .form-actions {
+  margin: 0;
+  padding: 20px 15px;
+  width: 100%;
 }
-.page-node-type-expense .view-header a:last-child {
-  background-color: rgba(255, 0, 0, 0.75);
-  color: #ccc;
+.page--expenses-item > .view-filters .form-actions input,
+.page--expenses-line > .view-filters .form-actions input {
+  border-radius: 5px;
+  text-transform: uppercase;
 }
-.page-node-type-expense .view-header a:last-child:hover {
-  background-color: maroon;
-  color: #FFF;
+.page--expenses-item > .view-content,
+.page--expenses-line > .view-content {
+  -webkit-box-ordinal-group: 1;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-ordinal-group: 1;
+  /* OLD - Firefox 19- */
+  -ms-flex-order: 1;
+  /* TWEENER - IE 10 */
+  -webkit-order: 1;
+  /* NEW - Chrome */
+  order: 1;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  width: auto;
+  margin-right: 25px;
+  min-width: 0;
 }
-.page-node-type-expense .view-expense-details table {
+.page--expenses-item table.table th,
+.page--expenses-line table.table th {
+  white-space: nowrap;
+  height: 18px;
+}
+.page--expenses-item table.table td,
+.page--expenses-line table.table td {
+  white-space: nowrap;
+  height: 18px;
+}
+.page-node-type-expense .block--expense-details table {
   width: 500px;
 }
-.page-node-type-expense .attachment-after table {
+.page-node-type-expense .block--expense-details table tfoot tr.summary {
+  position: relative;
+}
+.page-node-type-expense .block--expense-details table tfoot tr.summary td:last-child {
+  text-align: right;
+}
+.page-node-type-expense .block--expense-details table tfoot tr.summary td:last-child .label {
+  position: absolute;
+  left: 0;
+  padding-left: 12px;
+  text-transform: uppercase;
+}
+.page-node-type-expense .block--expense-details .attachment-after table {
   width: 1000px;
 }

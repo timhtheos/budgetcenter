@@ -1,39 +1,20 @@
-.page-node-type-expense {
-  .view-header {
-    margin-bottom: 20px;
+.page-node-type-expense .block--expense-details {
+  table {
+    width: 500px;
 
-    a {
-      border-radius: 0;
-      border: 0 none;
-      background-color: #ccc;
-      background-image: none;
-      color: rgb(0, 116, 189);
-      font-weight: 400;
+    tfoot tr.summary {
+      position: relative;
+    }
+
+    tfoot tr.summary td:last-child {
+      text-align: right;
+    }
+
+    tfoot tr.summary td:last-child .label {
+      position: absolute;
+      left: 0;
+      padding-left: 12px;
       text-transform: uppercase;
-      text-decoration: none;
-      margin-right: 10px;
-      padding: 5px 10px;
-
-      &:hover {
-        background-color: #0074bd;
-        color: #ccc;
-      }
-    }
-
-    a:last-child {
-      background-color: rgba(red, 0.75);
-      color: #ccc;
-    }
-
-    a:last-child:hover {
-      background-color: darken(red, 25%);
-      color: #FFF;
-    }
-  }
-
-  .view-expense-details {
-    table {
-      width: 500px;
     }
   }
 

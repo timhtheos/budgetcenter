@@ -1,0 +1,20 @@
+uuid: 46c70498-dbb3-4588-9503-1da41308b2e5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_txn_payment_method
+field_name: field_txn_payment_method
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

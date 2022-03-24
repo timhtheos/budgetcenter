@@ -8,7 +8,7 @@ id: node.expense.title
 field_name: title
 entity_type: node
 bundle: expense
-label: Particulars
+label: Description
 description: ''
 required: true
 translatable: true

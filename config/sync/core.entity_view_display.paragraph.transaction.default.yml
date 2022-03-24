@@ -1,0 +1,73 @@
+uuid: 4a87d6d1-2fda-44f8-84b2-309031524dc8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.transaction.field_txn_category
+    - field.field.paragraph.transaction.field_txn_item
+    - field.field.paragraph.transaction.field_txn_payee
+    - field.field.paragraph.transaction.field_txn_type
+    - field.field.paragraph.transaction.field_txn_unit_cost
+    - field.field.paragraph.transaction.field_txn_units
+    - paragraphs.paragraphs_type.transaction
+  module:
+    - options
+id: paragraph.transaction.default
+targetEntityType: paragraph
+bundle: transaction
+mode: default
+content:
+  field_txn_category:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_txn_item:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_txn_payee:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_txn_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_txn_unit_cost:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_txn_units:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

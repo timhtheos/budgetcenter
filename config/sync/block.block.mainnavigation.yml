@@ -1,0 +1,20 @@
+uuid: 0a9e7c63-d98e-4308-9594-ec1c98d3e115
+langcode: en
+status: true
+dependencies:
+  module:
+    - we_megamenu
+  theme:
+    - budget_center
+id: mainnavigation
+theme: budget_center
+region: header
+weight: -4
+provider: null
+plugin: 'we_megamenu_block:main'
+settings:
+  id: 'we_megamenu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: we_megamenu
+visibility: {  }

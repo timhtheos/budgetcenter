@@ -1,0 +1,25 @@
+uuid: 3bb724d1-895c-4270-a7cf-fbe48c45719b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_txn_units
+    - paragraphs.paragraphs_type.transaction
+id: paragraph.transaction.field_txn_units
+field_name: field_txn_units
+entity_type: paragraph
+bundle: transaction
+label: Units
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: !!float 1
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

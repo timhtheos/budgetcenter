@@ -1,0 +1,22 @@
+uuid: c5f78777-9c15-4c3b-86cd-514716454b3e
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - budget_center
+_core:
+  default_config_hash: bYvyEzJ7UcmjXZAYLxb4Qb_J77K9bPbk4ealdap31FY
+id: budget_center_help
+theme: budget_center
+region: help
+weight: -6
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

@@ -1,0 +1,33 @@
+uuid: 84cef000-50d9-4213-8572-a01515a4f402
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_txn_payee
+    - paragraphs.paragraphs_type.transaction
+    - taxonomy.vocabulary.payees
+  content:
+    - 'taxonomy_term:payees:52b42c43-c3d4-4ab2-bb8f-5c6b0907f33e'
+id: paragraph.transaction.field_txn_payee
+field_name: field_txn_payee
+entity_type: paragraph
+bundle: transaction
+label: Payee
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: 52b42c43-c3d4-4ab2-bb8f-5c6b0907f33e
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      payees: payees
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

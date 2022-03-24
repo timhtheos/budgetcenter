@@ -1,0 +1,77 @@
+uuid: 671d836c-df65-45f5-816d-a10406463687
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.transaction.field_txn_category
+    - field.field.paragraph.transaction.field_txn_item
+    - field.field.paragraph.transaction.field_txn_payee
+    - field.field.paragraph.transaction.field_txn_type
+    - field.field.paragraph.transaction.field_txn_unit_cost
+    - field.field.paragraph.transaction.field_txn_units
+    - paragraphs.paragraphs_type.transaction
+  module:
+    - chosen_field
+    - select_or_other
+    - shs_chosen
+id: paragraph.transaction.default
+targetEntityType: paragraph
+bundle: transaction
+mode: default
+content:
+  field_txn_category:
+    type: options_shs_chosen
+    weight: 5
+    region: content
+    settings:
+      display_node_count: false
+      create_new_items: false
+      create_new_levels: false
+      force_deepest: true
+      chosen_override: true
+      chosen_settings:
+        disable_search: false
+        search_contains: true
+        placeholder_text_multiple: 'Choose some options'
+        placeholder_text_single: 'Choose an option'
+        no_results_text: 'No results match'
+    third_party_settings: {  }
+  field_txn_item:
+    type: select_or_other_reference
+    weight: 1
+    region: content
+    settings:
+      select_element_type: select_or_other_select
+      sort_options: ''
+    third_party_settings: {  }
+  field_txn_payee:
+    type: select_or_other_reference
+    weight: 4
+    region: content
+    settings:
+      select_element_type: select_or_other_select
+      sort_options: ''
+    third_party_settings: {  }
+  field_txn_type:
+    type: chosen_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_txn_unit_cost:
+    type: number
+    weight: 3
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_txn_units:
+    type: number
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

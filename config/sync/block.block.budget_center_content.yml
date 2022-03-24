@@ -1,0 +1,22 @@
+uuid: c8a02562-75c0-4d83-b19f-771c7e8b3d97
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - budget_center
+_core:
+  default_config_hash: 6_eJxtyfANKFE_nfriHKgrARRIPHH88sI6jvQ4EHbBc
+id: budget_center_content
+theme: budget_center
+region: content
+weight: -2
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

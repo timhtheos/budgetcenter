@@ -1,0 +1,23 @@
+uuid: fa326d3c-3d69-4d2b-9db1-ca920432d57c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.items
+id: taxonomy_term.items.default
+targetEntityType: taxonomy_term
+bundle: items
+mode: default
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  path: true
+  status: true

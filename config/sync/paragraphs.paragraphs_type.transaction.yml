@@ -1,0 +1,10 @@
+uuid: 852e083b-7a96-4c79-b4dd-f96568d03449
+langcode: en
+status: true
+dependencies: {  }
+id: transaction
+label: Transaction
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

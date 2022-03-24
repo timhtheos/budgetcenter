@@ -1,16 +1,16 @@
-uuid: ef57dfbf-f0d0-4879-8fc6-214d8fc4ebd8
+uuid: af2cd89b-4ec3-40dd-90f1-30b898974d9c
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
-id: paragraph.field_no_of_units
-field_name: field_no_of_units
+id: paragraph.field_txn_unit_cost
+field_name: field_txn_unit_cost
 entity_type: paragraph
 type: decimal
 settings:
   precision: 10
-  scale: 4
+  scale: 2
 module: core
 locked: false
 cardinality: 1

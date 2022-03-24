@@ -1,0 +1,20 @@
+uuid: 2deccba7-c9af-412f-bb7b-7274fd907e00
+langcode: en
+status: true
+dependencies:
+  theme:
+    - budget_center
+_core:
+  default_config_hash: gv5JXTvQXjlMY6PXrfxzcLMjMg4074WiEQCy7ZSMvK4
+id: budget_center_local_actions
+theme: budget_center
+region: content
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

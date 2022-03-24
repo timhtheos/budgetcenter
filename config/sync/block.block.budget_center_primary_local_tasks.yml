@@ -1,0 +1,33 @@
+uuid: 3322f42c-4564-44c1-ba25-4cff836636c9
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - budget_center
+_core:
+  default_config_hash: ouwsNHI1V3bwV1G1vl0EcbWy8AB9V62vgLOSjTpoCSI
+id: budget_center_primary_local_tasks
+theme: budget_center
+region: header
+weight: -3
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated
+      administrator: administrator
+      account_manager: account_manager

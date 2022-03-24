@@ -1,0 +1,33 @@
+uuid: 8dad2fe9-3694-4a55-98d9-3f09b6979349
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_txn_category
+    - paragraphs.paragraphs_type.transaction
+    - taxonomy.vocabulary.tags
+  content:
+    - 'taxonomy_term:tags:14b3d6c5-69e4-4d53-97a3-a442dd105401'
+id: paragraph.transaction.field_txn_category
+field_name: field_txn_category
+entity_type: paragraph
+bundle: transaction
+label: Categories
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: 14b3d6c5-69e4-4d53-97a3-a442dd105401
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

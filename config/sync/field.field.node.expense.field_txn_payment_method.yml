@@ -1,0 +1,29 @@
+uuid: 2da70a17-65d5-4279-aa5e-90a5fc7834e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_txn_payment_method
+    - node.type.expense
+    - taxonomy.vocabulary.payment_methods
+id: node.expense.field_txn_payment_method
+field_name: field_txn_payment_method
+entity_type: node
+bundle: expense
+label: 'Payment method'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      payment_methods: payment_methods
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

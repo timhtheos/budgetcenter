@@ -1,0 +1,46 @@
+uuid: 5b651019-422d-4591-9191-a1a832883851
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.expenses
+  module:
+    - node
+    - system
+    - user
+    - views
+  theme:
+    - budget_center
+id: views_block__expenses_block_expense_details
+theme: budget_center
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:expenses-block_expense_details'
+settings:
+  id: 'views_block:expenses-block_expense_details'
+  label: ''
+  label_display: '0'
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "*/edit\r\n*/quick_clone"
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      expense: expense

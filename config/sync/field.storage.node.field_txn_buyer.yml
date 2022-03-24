@@ -1,0 +1,20 @@
+uuid: 1890f1e5-c0b7-4871-af19-08cfb94f8f17
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - user
+id: node.field_txn_buyer
+field_name: field_txn_buyer
+entity_type: node
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

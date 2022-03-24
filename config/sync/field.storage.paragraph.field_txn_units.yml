@@ -1,11 +1,11 @@
-uuid: ef57dfbf-f0d0-4879-8fc6-214d8fc4ebd8
+uuid: cc580a2f-8ea0-4936-952f-e768287e1805
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
-id: paragraph.field_no_of_units
-field_name: field_no_of_units
+id: paragraph.field_txn_units
+field_name: field_txn_units
 entity_type: paragraph
 type: decimal
 settings:

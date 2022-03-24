@@ -3,16 +3,17 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.expense.field_buyer
-    - field.field.node.expense.field_date
-    - field.field.node.expense.field_expense_item
-    - field.field.node.expense.field_payment_method
+    - field.field.node.expense.field_txn_buyer
+    - field.field.node.expense.field_txn_date
+    - field.field.node.expense.field_txn_items
+    - field.field.node.expense.field_txn_payment_method
     - node.type.expense
   module:
     - chosen_field
     - datetime
     - paragraphs
     - path
+    - select_or_other
 id: node.expense.default
 targetEntityType: node
 bundle: expense
@@ -24,21 +25,21 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_buyer:
-    type: options_buttons
-    weight: 13
+  field_txn_buyer:
+    type: chosen_select
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_date:
+  field_txn_date:
     type: datetime_default
-    weight: 7
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_expense_item:
+  field_txn_items:
     type: paragraphs
-    weight: 10
+    weight: 26
     region: content
     settings:
       title: Paragraph
@@ -54,11 +55,13 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
-  field_payment_method:
-    type: chosen_select
-    weight: 11
+  field_txn_payment_method:
+    type: select_or_other_reference
+    weight: 10
     region: content
-    settings: {  }
+    settings:
+      select_element_type: select_or_other_select
+      sort_options: ''
     third_party_settings: {  }
   path:
     type: path

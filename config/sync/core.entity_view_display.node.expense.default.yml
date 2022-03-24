@@ -3,57 +3,21 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.expense.field_buyer
-    - field.field.node.expense.field_date
-    - field.field.node.expense.field_expense_item
-    - field.field.node.expense.field_payment_method
+    - field.field.node.expense.field_txn_buyer
+    - field.field.node.expense.field_txn_date
+    - field.field.node.expense.field_txn_items
+    - field.field.node.expense.field_txn_payment_method
     - node.type.expense
   module:
-    - datetime
-    - entity_reference_revisions
     - user
 id: node.expense.default
 targetEntityType: node
 bundle: expense
 mode: default
-content:
-  field_buyer:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 109
-    region: content
-  field_date:
-    type: datetime_default
-    label: above
-    settings:
-      timezone_override: ''
-      format_type: medium
-    third_party_settings: {  }
-    weight: 101
-    region: content
-  field_expense_item:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 110
-    region: content
-  field_payment_method:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 106
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
-    region: content
-hidden: {  }
+content: {  }
+hidden:
+  field_txn_buyer: true
+  field_txn_date: true
+  field_txn_items: true
+  field_txn_payment_method: true
+  links: true

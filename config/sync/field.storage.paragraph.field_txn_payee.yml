@@ -1,16 +1,16 @@
-uuid: ef57dfbf-f0d0-4879-8fc6-214d8fc4ebd8
+uuid: 9db43339-e102-4344-a74f-1daa9a95eff2
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
-id: paragraph.field_no_of_units
-field_name: field_no_of_units
+    - taxonomy
+id: paragraph.field_txn_payee
+field_name: field_txn_payee
 entity_type: paragraph
-type: decimal
+type: entity_reference
 settings:
-  precision: 10
-  scale: 4
+  target_type: taxonomy_term
 module: core
 locked: false
 cardinality: 1

@@ -1,0 +1,23 @@
+uuid: 9690115e-7bf0-40d0-9304-829aad88b556
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_txn_unit_cost
+    - paragraphs.paragraphs_type.transaction
+id: paragraph.transaction.field_txn_unit_cost
+field_name: field_txn_unit_cost
+entity_type: paragraph
+bundle: transaction
+label: 'Unit cost'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

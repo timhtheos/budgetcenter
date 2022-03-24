@@ -1,16 +1,16 @@
-uuid: ef57dfbf-f0d0-4879-8fc6-214d8fc4ebd8
+uuid: 3b9d2a92-b308-40b7-b1cd-a8ce321f4507
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
-id: paragraph.field_no_of_units
-field_name: field_no_of_units
+    - taxonomy
+id: paragraph.field_items
+field_name: field_items
 entity_type: paragraph
-type: decimal
+type: entity_reference
 settings:
-  precision: 10
-  scale: 4
+  target_type: taxonomy_term
 module: core
 locked: false
 cardinality: 1

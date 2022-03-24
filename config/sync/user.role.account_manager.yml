@@ -1,0 +1,17 @@
+uuid: ae9fa933-e06d-4758-a711-1ec8e9eaf869
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.expense
+  module:
+    - node
+    - quick_node_clone
+id: account_manager
+label: 'Account Manager'
+weight: 4
+is_admin: null
+permissions:
+  - 'clone expense content'
+  - 'delete any expense content'
+  - 'edit any expense content'

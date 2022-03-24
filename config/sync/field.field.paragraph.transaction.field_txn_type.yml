@@ -1,0 +1,23 @@
+uuid: 125e2713-5f58-4234-a62d-6ccf700d59b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_txn_type
+    - paragraphs.paragraphs_type.transaction
+  module:
+    - options
+id: paragraph.transaction.field_txn_type
+field_name: field_txn_type
+entity_type: paragraph
+bundle: transaction
+label: Type
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: debit
+default_value_callback: ''
+settings: {  }
+field_type: list_string

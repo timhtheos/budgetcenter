@@ -1,0 +1,20 @@
+uuid: 695305dc-2439-44c9-a58d-8eda07a0b631
+langcode: en
+status: true
+dependencies:
+  theme:
+    - budget_center
+_core:
+  default_config_hash: P-2PK2v3yJQRI4Mg1RqKQ0Ki0wP_UUErIvahd_MtMVc
+id: budget_center_page_title
+theme: budget_center
+region: content
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

@@ -1,0 +1,41 @@
+uuid: 707c0eaa-f207-4e79-9b66-1edfdb30ed26
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.income.field_txn_date
+    - field.field.node.income.field_txn_items
+    - node.type.income
+  module:
+    - datetime
+    - entity_reference_revisions
+    - user
+id: node.income.default
+targetEntityType: node
+bundle: income
+mode: default
+content:
+  field_txn_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_txn_items:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

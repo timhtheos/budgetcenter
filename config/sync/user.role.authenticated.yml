@@ -5,6 +5,7 @@ dependencies:
   config:
     - filter.format.basic_html
     - node.type.expense
+    - node.type.income
   module:
     - contact
     - filter
@@ -25,7 +26,10 @@ permissions:
   - 'access site-wide contact form'
   - 'clone expense content'
   - 'create expense content'
+  - 'create income content'
   - 'delete own expense content'
+  - 'delete own income content'
   - 'edit own expense content'
+  - 'edit own income content'
   - 'search content'
   - 'use text format basic_html'

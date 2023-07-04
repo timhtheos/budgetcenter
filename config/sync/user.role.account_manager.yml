@@ -4,14 +4,16 @@ status: true
 dependencies:
   config:
     - node.type.expense
+    - node.type.income
   module:
     - node
-    - quick_node_clone
 id: account_manager
 label: 'Account Manager'
 weight: 4
 is_admin: null
 permissions:
-  - 'clone expense content'
+  - 'create expense content'
   - 'delete any expense content'
+  - 'delete any income content'
   - 'edit any expense content'
+  - 'edit any income content'

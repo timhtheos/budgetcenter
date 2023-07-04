@@ -6,6 +6,8 @@ dependencies:
     - field.storage.node.field_txn_payment_method
     - node.type.expense
     - taxonomy.vocabulary.payment_methods
+  content:
+    - 'taxonomy_term:payment_methods:7f9c2a52-b2cf-42ca-b177-bf1c9c26d756'
 id: node.expense.field_txn_payment_method
 field_name: field_txn_payment_method
 entity_type: node
@@ -14,7 +16,9 @@ label: 'Payment method'
 description: ''
 required: true
 translatable: false
-default_value: {  }
+default_value:
+  -
+    target_uuid: 7f9c2a52-b2cf-42ca-b177-bf1c9c26d756
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'

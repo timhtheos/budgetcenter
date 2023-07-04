@@ -1,0 +1,24 @@
+uuid: 1cebe572-310f-4906-9114-1a2c7010c5ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.income.field_txn_date
+    - field.field.node.income.field_txn_items
+    - node.type.income
+  module:
+    - user
+id: node.income.teaser
+targetEntityType: node
+bundle: income
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_txn_date: true
+  field_txn_items: true

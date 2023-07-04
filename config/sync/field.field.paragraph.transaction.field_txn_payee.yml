@@ -7,7 +7,7 @@ dependencies:
     - paragraphs.paragraphs_type.transaction
     - taxonomy.vocabulary.payees
   content:
-    - 'taxonomy_term:payees:52b42c43-c3d4-4ab2-bb8f-5c6b0907f33e'
+    - 'taxonomy_term:payees:8a9a0182-817c-4daa-9ca4-b49f97e5fb0e'
 id: paragraph.transaction.field_txn_payee
 field_name: field_txn_payee
 entity_type: paragraph
@@ -18,7 +18,7 @@ required: true
 translatable: false
 default_value:
   -
-    target_uuid: 52b42c43-c3d4-4ab2-bb8f-5c6b0907f33e
+    target_uuid: 8a9a0182-817c-4daa-9ca4-b49f97e5fb0e
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'

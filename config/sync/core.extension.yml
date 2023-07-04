@@ -13,7 +13,6 @@ module:
   block_content: 0
   block_field: 0
   body_node_id_class: 0
-  bootstrap_quicktabs: 0
   breakpoint: 0
   chosen: 0
   chosen_field: 0
@@ -39,6 +38,7 @@ module:
   jquery_ui: 0
   jquery_ui_datepicker: 0
   jquery_ui_slider: 0
+  jquery_ui_tabs: 0
   jquery_ui_touch_punch: 0
   link: 0
   menu_link_content: 0
@@ -50,6 +50,7 @@ module:
   path_alias: 0
   quick_node_clone: 0
   quicktabs: 0
+  quicktabs_jqueryui: 0
   rdf: 0
   search: 0
   select_or_other: 0

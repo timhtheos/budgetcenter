@@ -143,3 +143,17 @@ function budget_center_theme_suggestions_details_alter(array &$suggestions, arra
 function budget_center_preprocess_menu_local_task(array &$variables) {
   //$variables['element']['#link']['url']->setOption('attributes', ['class'=>'rounded']);
 }
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function budget_center_views_pre_render(\Drupal\views\ViewExecutable $view) {
+  if ($view->id() == "expenses" && $view->current_display == 'page_expenses_item') {
+    kint($view);
+    /* foreach($view->result as $value){ */
+      /* kint($value->_object->get('title')->value); */
+      /* $value->_object->set('title', 'test - ' . time()); */
+    /* } */
+  }
+}
+
